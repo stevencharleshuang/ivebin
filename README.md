@@ -81,6 +81,15 @@
 
 ## Additional Libraries
 
+* Express
+* Pg Promise
+* bodyParser
+* Nodemon
+* Morgan
+* Dotenv
+* Express Session
+* Method Override
+* Faker
 
 ## Code Snippet
 
