@@ -1,5 +1,3 @@
-# project-2-CRUD-app
-
 # IveBin Travel Blogger
 
 # Project Overview
@@ -23,6 +21,9 @@
 
 ## Priority Matrix
 * [Priority Matrix](https://res.cloudinary.com/dk1cgfxkn/image/upload/v1524073211/Priority_Matrix.jpg)
+
+## ERD
+* [ERD](https://res.cloudinary.com/dk1cgfxkn/image/upload/v1524083951/Project_2_ERD.jpg)
 
 ## Blog Components
 
