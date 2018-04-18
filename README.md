@@ -13,7 +13,7 @@
 |   Day 7 Tuesday   |   Presentations   |
 
 ## Project Description
-
+IveBin is a travel blogging app that allows users to share their stories along with pictures of their travels. Post MVP, users are able to reference locations they visited using Google's Places API and include information such as address, hours, price level, ratings and reviews.
 
 ## Wireframes
 * [Wireframe Image 01 - Whiteboard - General Overview](http://res.cloudinary.com/dk1cgfxkn/image/upload/v1524070206/Wire_Frame_001.jpg)
