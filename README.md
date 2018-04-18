@@ -22,7 +22,7 @@
 
 
 ## Priority Matrix
-* [Priority Matrix](https://res.cloudinary.com/dk1cgfxkn/image/upload/v1522250867/priority-matrix.jpg)
+* [Priority Matrix](https://res.cloudinary.com/dk1cgfxkn/image/upload/v1524073211/Priority_Matrix.jpg)
 
 ## Blog Components
 
