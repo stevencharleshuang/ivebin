@@ -32,7 +32,19 @@ IveBin is a travel blogging app that allows users to share their stories along w
 
 #### Landing Page
 
-As a user, when I reach the Landing Page, I want to login or sign up for a new account
+As a user, when I reach the Landing Page, I want to login or sign up for a new account. I want the option to view a directory of users with public blogs.
+
+#### Directory Page
+
+As a user, when I reach the directory of public blogs, I want to see a gallery of user accounts that link to their respective profiles.
+
+#### Profile Display
+
+As a user, when I've clicked on a profile from the Directory Page, I want to see a user's profile with a user's avatar image along with links to the user's blog posts.
+
+#### Blog display
+
+As a user, when I reach a user's blog, I want to see a blog post with a title, text content, an image related to the text content and links to previous blog posts
 
 #### User Account Page
 
