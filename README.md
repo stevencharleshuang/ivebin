@@ -23,7 +23,7 @@ IveBin is a travel blogging app that allows users to share their stories along w
 * [Priority Matrix](https://res.cloudinary.com/dk1cgfxkn/image/upload/v1524073211/Priority_Matrix.jpg)
 
 ## ERD
-* [ERD](https://res.cloudinary.com/dk1cgfxkn/image/upload/v1524083951/Project_2_ERD.jpg)
+* [ERD](http://res.cloudinary.com/dk1cgfxkn/image/upload/v1524153750/Project_2_ERD_1.jpg)
 
 ## Blog Components
 
