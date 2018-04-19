@@ -1,0 +1,58 @@
+/*
+Sienna:
+  #9B5725
+  rgba(155,87,37,1)
+
+Dark Slate Gray:
+  #375C72
+  rgba(55,92,114,1)
+
+Tan:
+  #D6D1BC
+  rgba(214,209,188,1)
+
+Dark Slate Gray:
+  #090B0D
+  rgba(9,11,13,1)
+
+Cadet Blue:
+  #739EA5
+  rgba(115,158,165,1)
+
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Oleo Script Swash Caps', cursive;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Qwigley', cursive;
+font-family: 'Mate', serif;
+
+*/
+body {
+  background-color: rgba(240,240,240,1);
+  color: rgba(0,0,0,1);
+  font-family: 'Mate', serif;
+  margin: 0 auto;
+}
+.logo {
+  font-family: 'Qwigley', cursive;
+  font-size: 5em;
+  letter-spacing: 5px;
+  padding: 3%;
+  position: relative;
+  text-align: center;
+}
+h1 {
+  background-color: rgba(55,92,114,.9);
+  color: rgb(240,240,245);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 3%;
+  text-align: center;
+
+}
+p {
+  padding: 3%;
+}
+.register-user {
+  text-align: center;
+}
