@@ -3,7 +3,8 @@ const logger         = require('morgan');
 const bodyParser     = require('body-parser');
 const path           = require('path');
 const methodOverride = require('method-override');
-const router         = require('./routes/router');
+const publicRouter   = require('./routes/publicRouter');
+const privateRouter  = require('./routes/privateRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,7 +19,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
-app.use('/routes', router);
+app.use('/public', publicRouter);
+app.use('/private', privateRouter);
 app.get('/', (req, res) => {
   console.log('At Homepage');
   // res.json('Welcome to the IveBin Homepage');
