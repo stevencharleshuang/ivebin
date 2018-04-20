@@ -2,6 +2,7 @@ const db = require('../config/connection');
 
 module.exports = {
 
+  // Find One User By ID
   findByUserId(id) {
     return db.many(`
       SELECT *
@@ -10,6 +11,7 @@ module.exports = {
     `, id);
   },
 
+  // Find All Users
   findAllUsers() {
     return db.many(`
       SELECT *
@@ -18,6 +20,7 @@ module.exports = {
     // console.log('reached models')
   },
 
+  // Create One User
   createNewUser(user) {
     return db.one(`
       INSERT INTO users
@@ -27,6 +30,7 @@ module.exports = {
     `, user);
   },
 
+  // Update One User
   updateUser(user) {
     return db.one(`
          UPDATE users
@@ -38,6 +42,7 @@ module.exports = {
     console.log('reached models')
   },
 
+  // Delete One User
   deleteUser(user) {
     return db.none(`
       DELETE FROM users

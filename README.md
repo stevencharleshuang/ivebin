@@ -96,17 +96,21 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 |   Create User Table   |   H   |   0.5 |   0.5 |   0.5 |
 |   Create Blog Table   |   H   |   0.5 |       |       |
 |   Create New User - Register New User |   H   |   2   |   1   |   3   |
-|   Read Users - Users Directory    |   H   |   1   |       |   1   |
-|   Read User Info - Profile Page   |   H   |   1.5 |       |   1   |
-|   Update User Info    |   M   |   2   |   1   |       |
-|   Delete User - Account Deletion  |   M   |   0.5 |       |       |
+|   Read Users - Users Directory    |   H   |   1   |   1   |   1   |
+|   Read User Info - Profile Page   |   H   |   1.5 |   1   |   1   |
+|   Update User Info    |   M   |   2   |   2   |   3   |
+|   Delete User - Account Deletion  |   M   |   0.5 |   0.5 |   0.5 |
 |   Create New Blog Entry   |   H   |   2   |       |       |
 |   Read Blog - Show All Blog Entries From One User |   H   |   2   |       |       |
 |   Read Blog - Show One Blog Entry From One User   |   H   |   1   |       |       |
 |   Update One Blog Entry From One User |   M   |   2   |       |       |
 |   Delete One Blog Entry From One User |   M   |   0.5 |       |       |
-|   Authentication - Login  |   M   |   2   |       |       |
-|   Authorization - Public - Private Page Access    |   M   |   2   |       |       |
+|   Authentication - Login - Research   |   M   |   2   |       |       |
+|   Authentication - Login - Planning   |   M   |   0.5 |       |       |
+|   Authentication - Login - Implementation |   M   |   2   |       |       |
+|   Authorization - Public - Private Page Access - Research |   M   |   1   |       |       |
+|   Authorization - Public - Private Page Access - Planning |   M   |   0.5 |       |       |
+|   Authorization - Public - Private Page Access - Implementation   |   M   |   1.5 |       |       |
 |   Flex Box    |   L   |   0.5 |       |       |
 |   Video Presentation  |   L   |   1   |       |       |
 |   Post MVP: API Integration - Research    |   M   |   1   |       |       |
@@ -117,7 +121,7 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 |   Post MVP: Selective Blog accessibility - Planning   |   L   |   1   |       |       |
 |   Post MVP: Selective Blog accessibility - Development    |   L   |   1   |       |       |
 |       |       |       |       |       |
-|   Sum Hours   |       |   30  |   3.5 |   5.7 |
+|   Sum Hours   |       |   33.5    |   7   |   9.2 |
 
 ## Helper Functions
 

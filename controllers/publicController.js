@@ -2,7 +2,7 @@ const publicDB = require('../models/publicModel');
 
 const publicController = {
 
-  // Get One User - Public
+  // Get One User Profile - Public
   getOneUser(req, res, next) {
     publicDB.findByUserId(req.params.id)
     .then((user) => {
@@ -16,7 +16,7 @@ const publicController = {
     });
   },
 
-  // Get All Users - Public
+  // Get All Usernames - Public
   getDirectory(req, res, next) {
     publicDB.findAllUsers()
     .then((users) => {
@@ -45,7 +45,7 @@ const publicController = {
     });
   },
 
-  // Edit User Info
+  // Edit User Info - Private
   editUserInfo(req, res, next){
     req.body.id = req.params.id
     publicDB.updateUser(req.body)
@@ -60,6 +60,7 @@ const publicController = {
     });
   },
 
+  // Delete User Account - Private
   removeUser(req, res, next) {
     publicDB.deleteUser(req.params.id)
       .then(() => {
