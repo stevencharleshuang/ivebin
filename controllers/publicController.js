@@ -20,7 +20,7 @@ const publicController = {
     .then((data) => {
       console.log('Reached the controller');
       // res.locals.users = data;
-      res.send(data);
+      res.json(data);
       next();
     })
     .catch((err) => {

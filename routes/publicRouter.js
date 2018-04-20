@@ -13,7 +13,7 @@ publicRouter.route('/users/:id')
   .get(publicController.getOneUser)
   .post(publicController.registerNewUser, publicViewsController.showUserProfile)
 
-publicRouter.route('/directory')
+publicRouter.route('/users/directory')
   .get(publicController.getDirectory)
 
 publicRouter.route('/')
