@@ -56,6 +56,21 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 
 ## Features
 
+### Clickable Model
+*   Landing page: Login Button, Register New User, Public Directory of Users
+*   Public Directory of Users: Gallery of usernames, links to Individual Public Profiles
+*   Individual Public Profiles: Display user's username, email and avatar, sample list of blog entries links to individual public blog entry
+*   Individual Public Blog Entry: Input text fields, Post button, Edit Button, Delete Button
+
+### Working Prototype
+*   User signup
+*   User login
+*   User profile with ability to edit or delete account
+*   Display users
+*   Blog entry creation with ability to edit or delete
+*   Display blog entries from a single user
+*   Display one blog entry from a single user
+
 ### MVP
 *   User signup
 *   User login
@@ -75,17 +90,17 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 
 
 ## Functional Components
-|   Component   |   Priority    |   Est Time (Hrs)  |   Time Invested   |   Actual Time |
+|   Component   |   Priority    |   Est Time (Hrs)  |   Time Invested (Hrs) |   Actual Time (Hrs)   |
 |   --- |   :---:   |   :---:   |   :---:   |   :---:   |
-|   Database Creation   |   H   |   1   |       |       |
-|   Create User Table   |   H   |   0.5 |       |       |
+|   Database Creation   |   H   |   1   |   1   |   0.2 |
+|   Create User Table   |   H   |   0.5 |   0.5 |   0.5 |
 |   Create Blog Table   |   H   |   0.5 |       |       |
-|   Create New User - Register New User |   H   |   2   |       |       |
-|   Read Users - Users Directory    |   H   |   1   |       |       |
-|   Read User Info - Profile Page   |   H   |   1.5 |       |       |
-|   Update User Info    |   M   |   2   |       |       |
+|   Create New User - Register New User |   H   |   2   |   1   |   3   |
+|   Read Users - Users Directory    |   H   |   1   |       |   1   |
+|   Read User Info - Profile Page   |   H   |   1.5 |       |   1   |
+|   Update User Info    |   M   |   2   |   1   |       |
 |   Delete User - Account Deletion  |   M   |   0.5 |       |       |
-|   Create New Blog |   H   |   2   |       |       |
+|   Create New Blog Entry   |   H   |   2   |       |       |
 |   Read Blog - Show All Blog Entries From One User |   H   |   2   |       |       |
 |   Read Blog - Show One Blog Entry From One User   |   H   |   1   |       |       |
 |   Update One Blog Entry From One User |   M   |   2   |       |       |
@@ -94,11 +109,15 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 |   Authorization - Public - Private Page Access    |   M   |   2   |       |       |
 |   Flex Box    |   L   |   0.5 |       |       |
 |   Video Presentation  |   L   |   1   |       |       |
-|   Post MVP: API Integration   |   M   |   3   |       |       |
+|   Post MVP: API Integration - Research    |   M   |   1   |       |       |
+|   Post MVP: API Integration - Planning    |   M   |   0.5 |       |       |
+|   Post MVP: API Integration - Development |   M   |   1.5 |       |       |
 |   Post MVP: Design    |   H   |   1.5 |       |       |
 |   Post MVP: Comments Section  |   L   |   1.5 |       |       |
-|   Post MVP: Selective Blog accessibility  |   L   |   3   |       |       |
-|   Sum Hours   |       |   31  |       |       |
+|   Post MVP: Selective Blog accessibility - Planning   |   L   |   1   |       |       |
+|   Post MVP: Selective Blog accessibility - Development    |   L   |   1   |       |       |
+|       |       |       |       |       |
+|   Sum Hours   |       |   30  |   3.5 |   5.7 |
 
 ## Helper Functions
 

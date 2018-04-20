@@ -4,9 +4,9 @@ const publicController = {
 
   getOneUser(req, res, next) {
     publicDB.findByUserId(req.params.id)
-    .then((data) => {
-      // res.locals.user = data;
-      res.send(data);
+    .then((user) => {
+      res.locals.user = user;
+      // res.send(user);
       next();
     })
     .catch((err) => {
@@ -17,10 +17,10 @@ const publicController = {
 
   getDirectory(req, res, next) {
     publicDB.findAllUsers()
-    .then((data) => {
+    .then((users) => {
       console.log('Reached the controller');
-      // res.locals.users = data;
-      res.json(data);
+      res.locals.users = users;
+      // res.json(users);
       next();
     })
     .catch((err) => {
@@ -31,8 +31,9 @@ const publicController = {
 
   registerNewUser(req, res, next){
     publicDB.createNewUser(req.body)
-      .then(data => {
-        res.json(data)
+      .then(user => {
+        // res.json(user)
+        res.redirect(`/public/users/`)
         next();
       })
       .catch((err) => {
@@ -41,6 +42,18 @@ const publicController = {
     });
   },
 
+  editUserInfo(req, res, next){
+    publicDB.updateUser(req.body)
+      .then(user => {
+        // res.json(user)
+        res.redirect(`/public/users/`)
+        next();
+      })
+      .catch((err) => {
+        console.log('I am error: ', err);
+        next(err);
+    });
+  },
 }
 
 module.exports = publicController;

@@ -8,13 +8,16 @@ function sendError(err, req, res, next) {
   res.sendStatus(500);
 };
 
+publicRouter.route('/users/:id/edit')
+  .get(publicViewsController.showEditForm)
 
 publicRouter.route('/users/:id')
-  .get(publicController.getOneUser)
-  .post(publicController.registerNewUser, publicViewsController.showUserProfile)
+  .get(publicController.getOneUser, publicViewsController.showUserProfile)
+  .put(publicController.editUserInfo)
 
-publicRouter.route('/users/directory')
-  .get(publicController.getDirectory)
+publicRouter.route('/users')
+  .get(publicController.getDirectory, publicViewsController.showAllUsers)
+  .post(publicController.registerNewUser)
 
 publicRouter.route('/')
   .get(publicViewsController.showHomepage)

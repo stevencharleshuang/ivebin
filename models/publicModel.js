@@ -19,11 +19,21 @@ module.exports = {
   },
 
   createNewUser(user) {
-    return db.many(`
+    return db.one(`
       INSERT INTO users
                   (name, username, email, password, avatar_url)
            VALUES ($/name/, $/username/, $/email/, $/password/, $/avatar_url/)
         RETURNING *
+    `, user);
+  },
+
+  updateUser(user) {
+    return db.one(`
+         UPDATE users
+            SET name = $/name/, username = $/username/, email = $/email/,
+                password = $/password/, avatar_url = $/avatar_url/
+          WHERE id = $/id/
+      RETURNING *
     `, user);
   },
 };
