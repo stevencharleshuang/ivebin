@@ -1,14 +1,13 @@
 <% include ../../partials/boilerplate %>
 
-
-<h1>This is a userpage</h1>
+<h1>This Is A Public User Profile</h1>
     <div class = "user">
 
         <p>"<%= user[0].username %>"</p>
         <p>"<%= user[0].email %>"</p>
         <p><img src="<%= user[0].avatar_url %>"></p>
 
-
+        <a href="/public/users/<%= user[0].id %>/edit">Edit User</a>
     </div>
 
 <% include ../../partials/end %>
