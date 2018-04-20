@@ -1,0 +1,13 @@
+<% include ../../partials/boilerplate %>
+
+<h2>This is the Users Directory</h2>
+
+<% users.forEach(users => { %>
+    <div class = "user">
+      <a href="/public/users/<%= users.id %>">
+        <p>"<%= users.username %>"</p>
+      </a>
+    </div>
+<% }) %>
+
+<% include ../../partials/end %>
