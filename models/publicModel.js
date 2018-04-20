@@ -35,5 +35,13 @@ module.exports = {
           WHERE id = $/id/
       RETURNING *
     `, user);
+    console.log('reached models')
   },
+
+  deleteUser(user) {
+    return db.none(`
+      DELETE FROM users
+            WHERE id = $1
+    `, user)
+  }
 };

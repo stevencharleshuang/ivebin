@@ -9,5 +9,8 @@
 
         <a href="/public/users/<%= user[0].id %>/edit">Edit User</a>
     </div>
+    <form method='POST' action="/public/users/<%= user[0].id %>?_method=DELETE">
+      <input type="Submit" value="Delete Account">
+    </form>
 
 <% include ../../partials/end %>

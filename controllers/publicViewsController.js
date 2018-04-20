@@ -1,13 +1,13 @@
 module.exports = {
 
   showHomepage(req, res) {
-    const newUserId = req.body.length
+    let newUserId = req.body.length
     console.log(req.body.id)
     res.render('home/index', {newUserId: newUserId});
   },
 
   showUserProfile(req, res) {
-    const user = res.locals.user
+    let user = res.locals.user
     res.render('public/user-public-profile', {user: user})
   },
 
@@ -17,11 +17,13 @@ module.exports = {
   // },
 
   showAllUsers(req, res) {
-    const users = res.locals.users
-    res.render('public/directory', {users: users, reslocs: res.locals})
+    let users = res.locals.users
+    res.render('public/directory', {users: users})
   },
 
   showEditForm(req, res) {
-    res.render('')
-  }
+    let user = res.locals.user
+    res.render('private/edit-user', {user: user})
+  },
+
 };

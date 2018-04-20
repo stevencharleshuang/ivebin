@@ -1,0 +1,10 @@
+<div class="register-user">
+  <form action="public/users/<%= user[0].id %>?_method=PUT" method="POST">
+    <input type="text" name="name" value="<%= user[0].name %>" /><br>
+    <input type="text" name="username" value="<%= user[0].username %>" /><br>
+    <input type="text" name="email" value="<%= user[0].email %>" /><br>
+    <input type="text" name="password" value="<%= user[0].password %>" /><br>
+    <input type="text" name="avatar_url" value="<%= user[0].avatar_url %>" /><br>
+    <input type="submit" value="Update Account Information" />
+  </form>
+</div>

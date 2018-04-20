@@ -9,11 +9,12 @@ function sendError(err, req, res, next) {
 };
 
 publicRouter.route('/users/:id/edit')
-  .get(publicViewsController.showEditForm)
+  .get(publicController.getOneUser, publicViewsController.showEditForm)
 
 publicRouter.route('/users/:id')
-  .get(publicController.getOneUser, publicViewsController.showUserProfile)
+  .get(publicController.getOneUser, publicController.getDirectory, publicViewsController.showUserProfile)
   .put(publicController.editUserInfo)
+  .delete(publicController.removeUser)
 
 publicRouter.route('/users')
   .get(publicController.getDirectory, publicViewsController.showAllUsers)

@@ -2,6 +2,7 @@ const publicDB = require('../models/publicModel');
 
 const publicController = {
 
+  // Get One User - Public
   getOneUser(req, res, next) {
     publicDB.findByUserId(req.params.id)
     .then((user) => {
@@ -15,6 +16,7 @@ const publicController = {
     });
   },
 
+  // Get All Users - Public
   getDirectory(req, res, next) {
     publicDB.findAllUsers()
     .then((users) => {
@@ -29,6 +31,7 @@ const publicController = {
     });
   },
 
+  // Create New User - Public
   registerNewUser(req, res, next){
     publicDB.createNewUser(req.body)
       .then(user => {
@@ -42,12 +45,25 @@ const publicController = {
     });
   },
 
+  // Edit User Info
   editUserInfo(req, res, next){
+    req.body.id = req.params.id
     publicDB.updateUser(req.body)
       .then(user => {
-        // res.json(user)
-        res.redirect(`/public/users/`)
-        next();
+        console.log(req.body, 'update controller');
+        res.locals.user = user
+        // res.redirect(`/public/users/${user}`)
+      })
+      .catch((err) => {
+        console.log('I am error: ', err);
+        next(err);
+    });
+  },
+
+  removeUser(req, res, next) {
+    publicDB.deleteUser(req.params.id)
+      .then(() => {
+        res.redirect('/public/users');
       })
       .catch((err) => {
         console.log('I am error: ', err);
