@@ -50,9 +50,9 @@ const publicController = {
     req.body.id = req.params.id
     publicDB.updateUser(req.body)
       .then(user => {
-        console.log(req.body, 'update controller');
+        // console.log(req.body, 'update controller');
         res.locals.user = user
-        // res.redirect(`/public/users/${user}`)
+        res.redirect(`/public/users/${user.id}`)
       })
       .catch((err) => {
         console.log('I am error: ', err);
