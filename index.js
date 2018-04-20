@@ -23,8 +23,8 @@ app.use('/public', publicRouter);
 app.use('/private', privateRouter);
 app.get('/', (req, res) => {
   console.log('At Homepage');
-  // res.json('Welcome to the IveBin Homepage');
-  res.render('home/index');
+  res.json('Welcome to the IveBin root dir');
+
 });
 
 

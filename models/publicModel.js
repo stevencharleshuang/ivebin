@@ -18,4 +18,12 @@ module.exports = {
     // console.log('reached models')
   },
 
+  createNewUser(student) {
+    return db.many(`
+      INSERT INTO users
+                  (name, username, email, password, avatar_url)
+           VALUES ($/name/, $/username/, $/email/, $/password/, $/avatar_url/)
+        RETURNING *
+    `, user);
+  },
 };

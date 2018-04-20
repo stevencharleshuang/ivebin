@@ -29,6 +29,18 @@ const publicController = {
     });
   },
 
+  registerNewUser(req, res, next){
+    publicDB.createNewUser(req.body)
+      .then(data => {
+        res.json(data)
+        next();
+      })
+      .catch((err) => {
+        console.log('I am error: ', err);
+        next(err);
+    });
+  },
+
 }
 
 module.exports = publicController;
