@@ -7,13 +7,17 @@ function sendError(err, req, res, next) {
   res.sendStatus(500);
 };
 
-publicRouter.get('/', (req, res) => {
-  console.log('At public router');
-  res.json(`You've reached the public router`);
-});
+
+publicRouter.route('/users/:id')
+  .get(publicController.getOneUser)
+
 
 publicRouter.route('/directory')
   .get(publicController.getDirectory)
 
+publicRouter.get('/', (req, res) => {
+  console.log('At public router');
+  res.json(`You've reached the public router`);
+});
 
 module.exports = publicRouter;

@@ -1,7 +1,7 @@
 {
   "name": "project-2-crud-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "IveBin, an app for travel-blogging",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git@git.generalassemb.ly:stevencharleshuang/project-2-CRUD-app.git"
   },
-  "author": "",
+  "author": "Steven Charles Huang",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
