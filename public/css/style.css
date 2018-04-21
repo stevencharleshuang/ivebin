@@ -41,17 +41,27 @@ body {
   text-align: center;
 }
 h1 {
-  background-color: rgba(55,92,114,.9);
+  background-color: rgba(55,92,114,.8);
   color: rgb(240,240,245);
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5em;
   margin: 0;
   padding: 3%;
   text-align: center;
-
 }
 p {
   padding: 3%;
+}
+/*.blue-bar {
+  background-color: rgba(55,92,114,.9);
+}*/
+.home-wrapper {
+  background-image: url('https://res.cloudinary.com/dk1cgfxkn/image/upload/v1524277512/yellowstone-falls.jpg');
+  background-size: cover;
+  background-color: rgba(240,240,240,1)
+}
+.home-main {
+  background-color: rgba(240,240,240,.8)
 }
 .register-user {
   text-align: center;
