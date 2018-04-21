@@ -1,0 +1,22 @@
+<% include ../../partials/boilerplate %>
+
+<div class="logo">IveBin</div>
+<div class="home-wrapper">
+  <div class="home-main">
+    <div class="blue-bar"><h1>This is a private user blog entry view</h1></div>
+      <div class="entry">
+            User Id: <%= entry.user_id %><br>
+          <p>
+
+            <%= entry.title  %><br>
+            <%= entry.date_created %><br>
+            <%= entry.content %><br>
+
+
+          </p>
+          <% console.log(entry) %>
+      </div>
+  </div>
+</div>
+
+<% include ../../partials/end %>

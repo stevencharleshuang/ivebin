@@ -5,8 +5,9 @@ const privateController = {
 getEntry(req, res, next) {
   privateDB.findByEntryId(req.params.id)
     .then((entry) => {
-      // res.locals.entry = entry;
-      res.json(entry);
+      res.locals.entry = entry;
+      // res.json(entry);
+      // console.log(entry)
       next();
     })
     .catch((err) => {

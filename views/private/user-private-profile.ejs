@@ -7,9 +7,15 @@
   <p>Body Text Sample: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas recusandae sed odio impedit dolores odit laborum dolorum sequi officia provident exercitationem corporis, iste culpa illo animi maxime sapiente deleniti quia?</p>
     <% entries.forEach(entries => { %>
       <div class = "entries">
-        <p><%= entries.title %></p>
+        <p>
+          <a href="/private/entries/<%= entries.id %>">
+            <%= entries.title %><br>
+            <%= entries.date_created %>
+          </a>
+        </p>
       </div>
     <% }) %>
   </div>
 </div>
 <% include ../../partials/end %>
+s
