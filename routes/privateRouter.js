@@ -1,6 +1,7 @@
-const express           = require('express');
-const privateRouter     = express.Router();
-const privateController = require('../controllers/privateController');
+const express                = require('express');
+const privateRouter          = express.Router();
+const privateController      = require('../controllers/privateController');
+const privateViewsController = require('../controllers/privateViewsController')
 
 function sendError(err, req, res, next) {
   console.log('I am error');
@@ -9,7 +10,7 @@ function sendError(err, req, res, next) {
 
 
 privateRouter.route('/user/:id')
-  .get(privateController.getUserEntries)
+  .get(privateController.getUserEntries, privateViewsController.showPrivateUserProfile)
   // .get(privateController.getUserProfile)
 
 privateRouter.route('/entries/:id')

@@ -19,8 +19,8 @@ getUserEntries(req, res, next) {
   privateDB.findUserEntries(req.params.id)
     .then((entries) => {
       console.log('Reached the controller');
-      // res.locals.entries = entries;
-      res.json(entries);
+      res.locals.entries = entries;
+      // res.json(entries);
       next();
     })
     .catch((err) => {
