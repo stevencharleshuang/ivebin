@@ -8,9 +8,13 @@ function sendError(err, req, res, next) {
   res.sendStatus(500);
 };
 
+
 privateRouter.route('/user/:id')
   .get(privateController.getUserEntries, privateViewsController.showPrivateUserProfile)
   // .get(privateController.getUserProfile)
+
+privateRouter.route('/entries/:id/edit')
+  .get(privateController.getEntry, privateViewsController.showPrivateEditEntry)
 
 privateRouter.route('/entries/new')
   .get(privateController.getEntries, privateViewsController.showPrivateNewEntry)
