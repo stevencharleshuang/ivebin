@@ -1,11 +1,14 @@
 <% include ../../partials/boilerplate %>
+<% console.log('View Rendered: User Private Profile') %>
 
 <div class="logo">IveBin</div>
 <div class="home-wrapper">
   <div class="home-main">
   <div class="blue-bar"><h1>This is a private user profile view</h1></div>
-  <p>Body Text Sample: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas recusandae sed odio impedit dolores odit laborum dolorum sequi officia provident exercitationem corporis, iste culpa illo animi maxime sapiente deleniti quia?</p>
-    <% entries.forEach(entries => { %>
+  <p>
+    <a href="/private/entries/new">Create New Blog Entry</a>
+  </p>
+  <% entries.forEach(entries => { %>
       <div class = "entries">
         <p>
           <a href="/private/entries/<%= entries.id %>">
@@ -18,4 +21,3 @@
   </div>
 </div>
 <% include ../../partials/end %>
-s

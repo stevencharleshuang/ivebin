@@ -12,6 +12,9 @@ privateRouter.route('/user/:id')
   .get(privateController.getUserEntries, privateViewsController.showPrivateUserProfile)
   // .get(privateController.getUserProfile)
 
+privateRouter.route('/entries/new')
+  .get(privateController.getEntries, privateViewsController.showPrivateNewEntry)
+
 privateRouter.route('/entries/:id')
   .get(privateController.getEntry, privateViewsController.showPrivateOneEntry)
 

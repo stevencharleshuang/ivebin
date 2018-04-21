@@ -2,6 +2,11 @@ const db = require('../config/connection');
 
 module.exports = {
 
+  // Create New Entry
+  createNewEntry(entry) {
+
+  },
+
   // Find Entry By Id
   findByEntryId(entry) {
     return db.one(`
