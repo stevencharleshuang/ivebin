@@ -34,4 +34,12 @@ module.exports = {
     console.log('reached models')
   },
 
+  // Delete One Blog Entry
+  deleteEntry(entry) {
+    return db.none(`
+      DELETE FROM blog_entries
+            WHERE id = $1
+    `, entry)
+  }
+
 }

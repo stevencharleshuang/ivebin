@@ -9,7 +9,7 @@ function sendError(err, req, res, next) {
 };
 
 
-privateRouter.route('/user/:id')
+privateRouter.route('/users/:id')
   .get(privateController.getUserEntries, privateViewsController.showPrivateUserProfile)
   // .get(privateController.getUserProfile)
 
@@ -21,6 +21,7 @@ privateRouter.route('/entries/new')
 
 privateRouter.route('/entries/:id')
   .get(privateController.getEntry, privateViewsController.showPrivateOneEntry)
+  .delete(privateController.removeEntry)
 
 privateRouter.route('/entries')
   .get(privateController.getEntries)

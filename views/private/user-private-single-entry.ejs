@@ -6,18 +6,22 @@
   <div class="home-main">
     <div class="blue-bar"><h1>This is a private user blog entry view</h1></div>
       <div class="entry">
-            User Id: <%= entry.user_id %><br>
+        User Id: <%= entry.user_id %><br>
           <p>
 
             <%= entry.title  %><br>
             <%= entry.date_created %><br>
             <%= entry.content %><br>
 
-
           </p>
+          <%# Edit Entry %>
           <a href="/private/entries/<%= entry.id %>/edit">
             <input type="button" value="Edit Blog">
           </a>
+          <%# Delete Entry %>
+          <form method='POST' action="/private/entries/<%= entry.id %>?_method=DELETE">
+            <input type="Submit" value="Delete Blog Entry">
+          </form>
           <% console.log(entry) %>
       </div>
   </div>

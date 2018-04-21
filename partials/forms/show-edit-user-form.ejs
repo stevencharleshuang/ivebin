@@ -1,4 +1,6 @@
-<div class="register-user">
+<% console.log('View Rendered: Partial - Edit User Info Form') %>
+
+<div class="form edit-user">
   <form action="/public/users/<%= user[0].id %>?_method=PUT" method="POST">
     <input type="text" name="name" value="<%= user[0].name %>" /><br>
     <input type="text" name="username" value="<%= user[0].username %>" /><br>

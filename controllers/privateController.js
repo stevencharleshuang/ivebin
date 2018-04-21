@@ -61,6 +61,19 @@ getEntries(req, res, next) {
       next(err);
     });
   },
+
+  // Delete Blog Entry - Private
+  removeEntry(req, res, next) {
+    privateDB.deleteEntry(req.params.id)
+      .then(() => {
+        console.log('Private: Reached the controller');
+        res.redirect('/private/users/1');
+      })
+      .catch((err) => {
+        console.log('I am error: ', err);
+        next(err);
+    });
+  },
 }
 
 module.exports = privateController;
