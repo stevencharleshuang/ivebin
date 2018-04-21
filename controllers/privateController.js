@@ -2,6 +2,19 @@ const privateDB = require('../models/privateModel');
 
 const privateController = {
 
+getEntry(req, res, next) {
+  privateDB.findByEntryId(req.params.id)
+    .then((entry) => {
+      // res.locals.entry = entry;
+      res.json(entry);
+      next();
+    })
+    .catch((err) => {
+      console.log('I am error: ', err);
+      next(err);
+    });
+  },
+
 getUserEntries(req, res, next) {
   privateDB.findUserEntries(req.params.id)
     .then((entries) => {
