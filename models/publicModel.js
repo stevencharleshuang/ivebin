@@ -30,23 +30,23 @@ module.exports = {
     `, user);
   },
 
-  // Update One User
-  updateUser(user) {
-    return db.one(`
-         UPDATE users
-            SET name = $/name/, username = $/username/, email = $/email/,
-                password = $/password/, avatar_url = $/avatar_url/
-          WHERE id = $/id/
-      RETURNING *
-    `, user);
-    console.log('reached models')
-  },
+  // // Update One User
+  // updateUser(user) {
+  //   return db.one(`
+  //        UPDATE users
+  //           SET name = $/name/, username = $/username/, email = $/email/,
+  //               password = $/password/, avatar_url = $/avatar_url/
+  //         WHERE id = $/id/
+  //     RETURNING *
+  //   `, user);
+  //   console.log('reached models')
+  // },
 
-  // Delete One User
-  deleteUser(user) {
-    return db.none(`
-      DELETE FROM users
-            WHERE id = $1
-    `, user)
-  }
+  // // Delete One User
+  // deleteUser(user) {
+  //   return db.none(`
+  //     DELETE FROM users
+  //           WHERE id = $1
+  //   `, user)
+  // },
 };

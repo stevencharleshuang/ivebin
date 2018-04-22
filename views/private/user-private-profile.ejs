@@ -17,6 +17,12 @@
         </p>
       </div>
     <% }) %>
+    <a href="/private/users/<%= entries[0].user_id %>/edit">
+      <input type="button" value="Edit User">
+    </a>
+    <form method='POST' action="/private/users/<%= entries[0].user_id %>?_method=DELETE">
+      <input type="Submit" value="Delete Account">
+    </form>
   </div>
 </div>
 <% include ../../partials/end %>

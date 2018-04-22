@@ -24,10 +24,10 @@ module.exports = {
     res.render('public/directory', {users: users})
   },
 
-  // Views Show Edit Form
-  showEditForm(req, res) {
-    let user = res.locals.user
-    res.render('private/edit-user', {user: user})
-  },
+  // // Views Show Edit Form
+  // showEditForm(req, res) {
+  //   let user = res.locals.user
+  //   res.render('private/edit-user', {user: user})
+  // },
 
 };

@@ -24,8 +24,15 @@ module.exports = {
   // Render One User Profile - Private View
   showPrivateUserProfile (req, res) {
     let entries = res.locals.entries
+    let user = res.locals.user
     console.log('Private: Showing One User Profile', res.locals.entries)
-    res.render('private/user-private-profile', {entries: entries})
+    res.render('private/user-private-profile', {entries: entries, user: user})
+  },
+
+  // Views Show Edit Form
+  showEditUserForm(req, res) {
+    let user = res.locals.user
+    res.render('private/edit-user', {user: user})
   },
 
 };

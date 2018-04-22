@@ -2,6 +2,35 @@ const privateDB = require('../models/privateModel');
 
 const privateController = {
 
+  // Edit User Info - Move to Private
+  editUserInfo(req, res, next){
+    req.body.id = req.params.id
+    privateDB.updateUser(req.body)
+      .then(user => {
+        // console.log(req.body, 'update controller');
+        res.locals.user = user
+        res.redirect(`/private/users/${user.id}`)
+      })
+      .catch((err) => {
+        console.log('I am error: ', err);
+        next(err);
+    });
+  },
+
+    // Delete User Account - Move to Private
+  removeUser(req, res, next) {
+    publicDB.deleteUser(req.params.id)
+      .then(() => {
+        res.redirect('/public/users');
+      })
+      .catch((err) => {
+        console.log('I am error: ', err);
+        next(err);
+    });
+  },
+
+
+
 // Get All Entries From One User
 getUserEntries(req, res, next) {
   privateDB.findUserEntries(req.params.id)

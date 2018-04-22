@@ -1,8 +1,28 @@
 const db = require('../config/connection');
 
 module.exports = {
+  // Users Models
+    // Update One User
+  updateUser(user) {
+    return db.one(`
+         UPDATE users
+            SET name = $/name/, username = $/username/, email = $/email/,
+                password = $/password/, avatar_url = $/avatar_url/
+          WHERE id = $/id/
+      RETURNING *
+    `, user);
+    console.log('reached models')
+  },
+    // Delete One User
+  deleteUser(user) {
+    return db.none(`
+      DELETE FROM users
+            WHERE id = $1
+    `, user)
+  },
 
-  // Create New Entry
+  // Blog Entries Models
+    // Create New Entry
   createNewEntry(entry, res) {
     return db.one(`
       INSERT INTO blog_entries
@@ -12,7 +32,7 @@ module.exports = {
     `, entry);
   },
 
-  // Find Entry By Id
+    // Find Entry By Id
   findByEntryId(entry) {
     return db.one(`
       SELECT *
@@ -21,7 +41,7 @@ module.exports = {
     `, entry);
   },
 
-  // Find All Blog Entries From One User
+    // Find All Blog Entries From One User
   findUserEntries (user) {
     return db.many(`
       SELECT *
@@ -30,7 +50,7 @@ module.exports = {
     `, user)
   },
 
-  // Find All Blog Entries
+    // Find All Blog Entries
   findAllEntries() {
     return db.many(`
       SELECT *
@@ -39,7 +59,7 @@ module.exports = {
     console.log('reached models')
   },
 
-  // Update One Blog Entry
+    // Update One Blog Entry
   updateEntry(entry) {
     return db.one(`
          UPDATE blog_entries
@@ -52,7 +72,7 @@ module.exports = {
     console.log('reached models')
   },
 
-  // Delete One Blog Entry
+    // Delete One Blog Entry
   deleteEntry(entry) {
     return db.none(`
       DELETE FROM blog_entries

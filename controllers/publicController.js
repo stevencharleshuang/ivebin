@@ -45,32 +45,20 @@ const publicController = {
     });
   },
 
-  // Edit User Info - Move to Private
-  editUserInfo(req, res, next){
-    req.body.id = req.params.id
-    publicDB.updateUser(req.body)
-      .then(user => {
-        // console.log(req.body, 'update controller');
-        res.locals.user = user
-        res.redirect(`/public/users/${user.id}`)
-      })
-      .catch((err) => {
-        console.log('I am error: ', err);
-        next(err);
-    });
-  },
-
-  // Delete User Account - Move to Private
-  removeUser(req, res, next) {
-    publicDB.deleteUser(req.params.id)
-      .then(() => {
-        res.redirect('/public/users');
-      })
-      .catch((err) => {
-        console.log('I am error: ', err);
-        next(err);
-    });
-  },
+  // // Edit User Info - Move to Private
+  // editUserInfo(req, res, next){
+  //   req.body.id = req.params.id
+  //   publicDB.updateUser(req.body)
+  //     .then(user => {
+  //       // console.log(req.body, 'update controller');
+  //       res.locals.user = user
+  //       res.redirect(`/public/users/${user.id}`)
+  //     })
+  //     .catch((err) => {
+  //       console.log('I am error: ', err);
+  //       next(err);
+  //   });
+  // },
 }
 
 module.exports = publicController;
