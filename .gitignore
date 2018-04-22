@@ -57,6 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+app-env
+
 .DS_Store
 
 ../.DS_Store
