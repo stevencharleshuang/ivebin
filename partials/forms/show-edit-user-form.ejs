@@ -6,7 +6,8 @@
     <input type="text" name="username" value="<%= user[0].username %>" /><br>
     <input type="text" name="email" value="<%= user[0].email %>" /><br>
     <input type="text" name="password" value="<%= user[0].password %>" /><br>
-    <input type="text" name="avatar_url" value="<%= user[0].avatar_url %>" /><br>
+    <input type="text" name="avatar_url" value="<%= user[0].avatar_url %>" /><br><br>
     <input type="submit" value="Update Account Information" />
-  </form>
+  </form><br>
+  <a href="/public/users/<%= user[0].id %>">Back to User Profile</a>
 </div>

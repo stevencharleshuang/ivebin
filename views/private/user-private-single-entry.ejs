@@ -17,13 +17,16 @@
           <%# Edit Entry %>
           <a href="/private/entries/<%= entry.id %>/edit">
             <input type="button" value="Edit Blog">
-          </a>
+          </a><br>
 
           <%# Delete Entry %>
           <form method='POST' action="/private/entries/<%= entry.id %>?_method=DELETE">
             <input type="Submit" value="Delete Blog Entry">
-          </form>
+          </form><br>
           <% console.log(entry) %>
+
+          <%# Back to User Profile %>
+          <a href="/private/users/<%= entry.user_id %>">Back to User Profile</a>
       </div>
   </div>
 </div>

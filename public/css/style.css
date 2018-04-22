@@ -32,6 +32,14 @@ body {
   font-family: 'Mate', serif;
   margin: 0 auto;
 }
+.logo
+  a:link,
+  a:hover,
+  a:visited,
+  a:active {
+    color: rgba(0,0,0,1);;
+    text-decoration: none;
+}
 .logo {
   font-family: 'Qwigley', cursive;
   font-size: 5em;

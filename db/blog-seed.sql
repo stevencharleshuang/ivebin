@@ -1,12 +1,12 @@
 /c travel-blog
 
-DROP TABLE IF EXISTS blog_entries;
+DROP TABLE IF EXISTS blog_entries CASCADE;
 CREATE TABLE blog_entries(
   id            SERIAL PRIMARY KEY
   ,date_created VARCHAR(25) NOT NULL
   ,location     VARCHAR(50)
   ,title        VARCHAR(255) NOT NULL
-  ,content      VARCHAR(691) NOT NULL
+  ,content      TEXT NOT NULL
   ,image_url    VARCHAR(255)
   ,user_id      INTEGER  NOT NULL
 );
