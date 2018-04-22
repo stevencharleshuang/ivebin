@@ -45,7 +45,7 @@ const publicController = {
     });
   },
 
-  // Edit User Info - Private
+  // Edit User Info - Move to Private
   editUserInfo(req, res, next){
     req.body.id = req.params.id
     publicDB.updateUser(req.body)
@@ -60,7 +60,7 @@ const publicController = {
     });
   },
 
-  // Delete User Account - Private
+  // Delete User Account - Move to Private
   removeUser(req, res, next) {
     publicDB.deleteUser(req.params.id)
       .then(() => {

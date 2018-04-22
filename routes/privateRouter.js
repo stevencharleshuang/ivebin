@@ -22,6 +22,7 @@ privateRouter.route('/users/:id/new')
 
 privateRouter.route('/entries/:id')
   .get(privateController.getEntry, privateViewsController.showPrivateOneEntry)
+  .put(privateController.editEntry)
   .delete(privateController.removeEntry)
 
 privateRouter.route('/entries')

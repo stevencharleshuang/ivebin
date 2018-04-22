@@ -3,11 +3,11 @@
 DROP TABLE IF EXISTS blog_entries;
 CREATE TABLE blog_entries(
   id            SERIAL PRIMARY KEY
-  ,date_created DATE NOT NULL
-  ,location     VARCHAR(9)
-  ,title        VARCHAR(9) NOT NULL
+  ,date_created VARCHAR(25) NOT NULL
+  ,location     VARCHAR(50)
+  ,title        VARCHAR(255) NOT NULL
   ,content      VARCHAR(691) NOT NULL
-  ,image_url    VARCHAR(12)
+  ,image_url    VARCHAR(255)
   ,user_id      INTEGER  NOT NULL
 );
 INSERT INTO blog_entries(date_created,location,title,content,image_url,user_id) VALUES ('20150113','Noujeniz','faz','Tawikrem zaboj nigu avzizut ekucinit oc piwekud lu homwi kaiw rav vozicsev uvozome vono dos ivbiga ridvimes jojmaho. Kobrutpa zine wihegso rusagpo ubnupgew noj rijwa du oleha cuzukaco ozifo zuwsodze urme dizarsib fijnuv owla lic. Olota ukbisijo wuz ni ziurhut bedvenez zotobit rud ihoafaza omla hec gup uherazer piw zuwsufbur. Ce vefdo rofodi bal katpaj fevholi no if teka ji si dekgisav ozjojtaf coofbo ok. Rawjepi vizab di mavratit asmeuvo cel tona ha sig kopizugob bureted kevnusjes zut jugeam segobelur cam ugacokzeh. Vid wuzu hegwelme jirgu gette udiiloced fertaspu nelnen vonekwo jegawci ju wema.','poc.cg',1);

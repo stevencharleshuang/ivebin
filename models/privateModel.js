@@ -39,6 +39,19 @@ module.exports = {
     console.log('reached models')
   },
 
+  // Update One Blog Entry
+  updateEntry(entry) {
+    return db.one(`
+         UPDATE blog_entries
+            SET location = $/location/,
+                title = $/title/, content = $/content/,
+                image_url = $/image_url/
+          WHERE id = $/id/
+      RETURNING *
+    `, entry);
+    console.log('reached models')
+  },
+
   // Delete One Blog Entry
   deleteEntry(entry) {
     return db.none(`

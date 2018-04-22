@@ -10,6 +10,6 @@
     <input type="text" name="content" placeholder="Content" /><br>
     <input type="text" name="image_url" placeholder="image_url" /><br><br>
     <input type="submit" value="Create New Entry" />
-    <input type="text" name="user_id" placeholder="<%= entries[0].user_id %>" /><br>
+    <input type="hidden" name="user_id" value="<%= entries[0].user_id %>" /><br>
   </form>
 </div>

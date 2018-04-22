@@ -17,21 +17,6 @@ getUserEntries(req, res, next) {
     });
   },
 
-postNewEntry(req, res, next) {
-  console.log('these are', req.params )
-  privateDB.createNewEntry(req.body)
-    .then(entry => {
-      console.log('Private: Reached the controller');
-      // console.log('Private Controller POST:', res.locals)
-      // res.json(entry)
-      res.redirect(`/private/users/${req.params.id}`)
-      next();
-      })
-    .catch((err) => {
-      console.log('I am error: ', err);
-      next(err);
-    });
-  },
 
 // Get One Entry From One User
 getEntry(req, res, next) {
@@ -57,6 +42,38 @@ getEntries(req, res, next) {
       res.locals.entries = entries;
       // res.json(entries);
       next();
+    })
+    .catch((err) => {
+      console.log('I am error: ', err);
+      next(err);
+    });
+  },
+
+// Post New Blog Entry
+postNewEntry(req, res, next) {
+  // console.log('these are', req.params )
+  privateDB.createNewEntry(req.body)
+    .then(entry => {
+      console.log('Private: Reached the controller');
+      // console.log('Private Controller POST:', res.locals)
+      // res.json(entry)
+      res.redirect(`/private/users/${req.params.id}`)
+      next();
+      })
+    .catch((err) => {
+      console.log('I am error: ', err);
+      next(err);
+    });
+  },
+
+// Edit Blog Entry - Private
+editEntry(req, res, next){
+  req.body.id = req.params.id
+  privateDB.updateEntry(req.body)
+    .then(entry => {
+      // console.log(req.body, 'update controller');
+      res.locals.entry = entry
+      res.redirect(`/private/entries/${req.params.id}`)
     })
     .catch((err) => {
       console.log('I am error: ', err);
