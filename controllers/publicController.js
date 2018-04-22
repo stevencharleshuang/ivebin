@@ -2,6 +2,16 @@ const publicDB = require('../models/publicModel');
 
 const publicController = {
 
+  // Get One User's Blog Entry - Public
+  // getOnePublicEntry(req, res, next) {
+    // publicDb.findEntryByUserId(req.params.id)
+  // }
+
+  // Get User Profile With Blog Entries - Public
+  // getManyPublicEntries(req, res, next) {
+    // publicDb.findEntriesByUserId(req.params.id)
+  // }
+
   // Get One User Profile - Public
   getOneUser(req, res, next) {
     publicDB.findByUserId(req.params.id)

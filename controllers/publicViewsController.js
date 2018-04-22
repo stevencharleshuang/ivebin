@@ -1,5 +1,11 @@
 module.exports = {
 
+  // Views Show One Public Entry From One User
+  // showOnePublicEntry
+
+  // Views Show Many Public Entries From One User
+  // showManyPublicEntries
+
   // Views Show Homepage
   showHomepage(req, res) {
     let newUserId = req.body.length

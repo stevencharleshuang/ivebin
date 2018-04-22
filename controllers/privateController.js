@@ -29,8 +29,7 @@ const privateController = {
     });
   },
 
-
-
+// Get User info
 // Get All Entries From One User
 getUserEntries(req, res, next) {
   privateDB.findUserEntries(req.params.id)

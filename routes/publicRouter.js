@@ -8,6 +8,13 @@ function sendError(err, req, res, next) {
   res.sendStatus(500);
 };
 
+// Public profile single entry
+// publicRouter.route('/users/:id/entries/:id')
+  // .get(publicController.getOnePublicEntry, publicViewsController.showOnePublicEntry)
+
+// Public profile many entries
+// publicRouter.route('/users/:id/entries')
+  // .get(publicController.getManyPublicEntries, publicViewsController.showManyPublicEntries)
 
 publicRouter.route('/users/:id')
   .get(publicController.getOneUser, publicController.getDirectory, publicViewsController.showUserProfile)
