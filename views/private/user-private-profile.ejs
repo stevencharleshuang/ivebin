@@ -1,12 +1,11 @@
 <% include ../../partials/boilerplate %>
 <% console.log('View Rendered: User Private Profile') %>
-
-<div class="logo">IveBin</div>
+<% console.log(entries) %>
 <div class="home-wrapper">
   <div class="home-main">
   <div class="blue-bar"><h1>This is a private user profile view</h1></div>
   <p>
-    <a href="/private/entries/new">Create New Blog Entry</a>
+    <a href="/private/users/<%= entries[0].user_id %>/new">Create New Blog Entry</a>
   </p>
   <% entries.forEach(entries => { %>
       <div class = "entries">

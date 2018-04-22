@@ -11,13 +11,14 @@ function sendError(err, req, res, next) {
 
 privateRouter.route('/users/:id')
   .get(privateController.getUserEntries, privateViewsController.showPrivateUserProfile)
+  .post(privateController.postNewEntry)
   // .get(privateController.getUserProfile)
 
 privateRouter.route('/entries/:id/edit')
   .get(privateController.getEntry, privateViewsController.showPrivateEditEntry)
 
-privateRouter.route('/entries/new')
-  .get(privateController.getEntries, privateViewsController.showPrivateNewEntry)
+privateRouter.route('/users/:id/new')
+  .get(privateController.getUserEntries, privateViewsController.showPrivateNewEntry)
 
 privateRouter.route('/entries/:id')
   .get(privateController.getEntry, privateViewsController.showPrivateOneEntry)

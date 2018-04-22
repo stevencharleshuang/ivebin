@@ -3,8 +3,13 @@ const db = require('../config/connection');
 module.exports = {
 
   // Create New Entry
-  createNewEntry(entry) {
-
+  createNewEntry(entry, res) {
+    return db.one(`
+      INSERT INTO blog_entries
+                  (date_created, location, title, content, image_url, user_id)
+           VALUES ($/date_created/, $/location/, $/title/, $/content/, $/image_url/, $/user_id/)
+        RETURNING *
+    `, entry);
   },
 
   // Find Entry By Id

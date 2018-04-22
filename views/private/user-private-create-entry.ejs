@@ -6,8 +6,8 @@
 <% include ../../partials/forms/show-new-entry-form %>
 
 <br><br>
-
-<a href="/private/user/1">
+<%# console.log('entries log', entries[0].user_id) %>
+<a href="/private/users/<%= entries[0].user_id %>">
   Back to User Profile
 </a>
 
