@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "index.js",
+    "heroku-postbuild": "npm install --production"
   },
   "engines": {
     "node": "9.11.1",
