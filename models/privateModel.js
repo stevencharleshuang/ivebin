@@ -45,7 +45,7 @@ module.exports = {
     return db.one(`
       SELECT *
         FROM users
-       WHERE id = $1;
+      WHERE id = $1;
     `, user)
   },
   // Blog Entries Models
@@ -71,9 +71,11 @@ module.exports = {
     // Find All Blog Entries From One User
   findUserEntries (entry) {
     return db.many(`
-      SELECT *
-        FROM blog_entries
-       WHERE user_id = $1
+      SELECT *, blog_entries.id as entry_id
+        FROM users
+   LEFT JOIN blog_entries
+          ON users.id = blog_entries.user_id
+       WHERE users.id = $1
     `, entry)
   },
 
