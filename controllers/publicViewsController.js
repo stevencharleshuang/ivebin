@@ -1,22 +1,25 @@
 module.exports = {
 
   // Views Show One Public Entry From One User
-  // showOnePublicEntry
+  showOnePublicEntry(req, res) {
+    let user = res.locals.user
+    // let entry = req.params.id
+    console.log('From views controller, public user one entry: ', user)
+    res.render('public/user-public-entry', {user: user})
+  },
 
-  // Views Show Many Public Entries From One User
-  // showManyPublicEntries
+  // Views Show One User Profile
+  showUserProfile(req, res) {
+    let user = res.locals.user
+    console.log('From views controller, public', user)
+    res.render('public/user-public-profile', {user: user})
+  },
 
   // Views Show Homepage
   showHomepage(req, res) {
     let newUserId = req.body.length
     console.log(req.body.id)
     res.render('home/index', {newUserId: newUserId});
-  },
-
-  // Views Show One User Profile
-  showUserProfile(req, res) {
-    let user = res.locals.user
-    res.render('public/user-public-profile', {user: user})
   },
 
   // showUserProfile(req, res) {

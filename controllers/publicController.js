@@ -3,20 +3,26 @@ const publicDB = require('../models/publicModel');
 const publicController = {
 
   // Get One User's Blog Entry - Public
-  // getOnePublicEntry(req, res, next) {
-    // publicDb.findEntryByUserId(req.params.id)
-  // }
-
-  // Get User Profile With Blog Entries - Public
-  // getManyPublicEntries(req, res, next) {
-    // publicDb.findEntriesByUserId(req.params.id)
-  // }
+  getOnePublicEntry(req, res, next) {
+    publicDB.findEntryByUserId(req.params.id)
+    .then((user) => {
+    console.log('Public Controller: Reached Get One Users Blog Entry Func', req.params.id)
+      res.locals.user = user;
+      // res.send(user);
+      next();
+    })
+    .catch((err) => {
+      console.log('I am error: ', err);
+      next(err);
+    });
+  },
 
   // Get One User Profile - Public
   getOneUser(req, res, next) {
     publicDB.findByUserId(req.params.id)
     .then((user) => {
       res.locals.user = user;
+      console.log('Public Controller, get one user profile', user)
       // res.send(user);
       next();
     })

@@ -2,11 +2,23 @@
 
 <h1>This Is A Public User Profile</h1>
     <div class = "user">
-
-        <p>"<%= user[0].username %>"</p>
-        <p>"<%= user[0].email %>"</p>
-        <p><img src="<%= user[0].avatar_url %>" /></p>
-
+    <% console.log(user) %>
+        <p>
+          <h2><%= user[0].username %></h2><br>
+          <%= user[0].email %><br>
+          <img src="<%= user[0].avatar_url %>" /><br>
+        </p>
+          <% user.forEach(user => { %>
+      <div class="entries">
+        <p>
+          <a href="/public/users/<%= user.user_id %>/entries/<%= user.id %>">
+            Title: <%= user.title %><br>
+            Location: <%= user.location %><br>
+            Date: <%= user.date_created %>
+          </a>
+        </p>
+      </div>
+    <% }) %>
     </div>
 
     <p>

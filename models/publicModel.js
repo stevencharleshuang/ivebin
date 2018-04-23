@@ -2,13 +2,25 @@ const bcrypt = require('bcrypt');
 const db = require('../config/connection');
 
 module.exports = {
+  // Find One Blog By User ID
+  findEntryByUserId(id) {
+    return db.one(`
+      SELECT  *, blog_entries.id as entry_id
+      FROM users
+      JOIN blog_entries
+          ON users.id = blog_entries.user_id
+       WHERE blog_entries.id = $1
+    `, id);
+  },
 
   // Find One User By ID
   findByUserId(id) {
     return db.many(`
-      SELECT *
+      SELECT *, blog_entries.id as entry_id
         FROM users
-       WHERE id = $1
+        JOIN blog_entries
+          ON users.id = blog_entries.user_id
+       WHERE users.id = $1
     `, id);
   },
 

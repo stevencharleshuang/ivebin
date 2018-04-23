@@ -1,0 +1,25 @@
+<% include ../../partials/boilerplate %>
+<% console.log('View Rendered: User Public Entry') %>
+
+<div class="home-wrapper">
+<div class="home-main">
+    <div class="blue-bar"><h1>This is a public user blog entry view</h1></div>
+      <div class="entry">
+        Testing Only:<br>
+        User Id: <%= user.user_id %><br>
+        Blog Entry Id: <%= user.entry_id %><br>
+          <p>
+
+            <%= user.title  %><br>
+            <%= user.date_created %><br>
+            <%= user.content %><br>
+
+          </p>
+
+          <%# Back to User Profile %>
+          <a href="/public/users/<%= user.user_id %>">Back to User Profile</a>
+      </div>
+  </div>
+</div>
+
+<% include ../../partials/end %>

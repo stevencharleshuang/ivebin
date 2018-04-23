@@ -9,8 +9,8 @@ function sendError(err, req, res, next) {
 };
 
 // Public profile single entry
-// publicRouter.route('/users/:id/entries/:id')
-  // .get(publicController.getOnePublicEntry, publicViewsController.showOnePublicEntry)
+publicRouter.route('/users/:id/entries/:id')
+  .get(publicController.getOnePublicEntry, publicViewsController.showOnePublicEntry)
 
 // Public profile many entries
 // publicRouter.route('/users/:id/entries')

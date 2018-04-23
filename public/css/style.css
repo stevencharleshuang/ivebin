@@ -40,6 +40,15 @@ body {
     color: rgba(0,0,0,1);;
     text-decoration: none;
 }
+  a:link,
+  a:visited {
+    color: rgba(55,92,114,.8);
+    text-decoration: none;
+  }
+  a:hover,
+  a:active {
+    border-bottom: 1px solid rgba(115,158,165,1);
+  }
 .logo {
   font-family: 'Qwigley', cursive;
   font-size: 5em;
