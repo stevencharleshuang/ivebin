@@ -5,6 +5,7 @@
 <div class="home-wrapper">
   <div class="home-main">
   <div class="blue-bar"><h1>This is a private user profile view</h1></div>
+  <img src="<%= entries[0].avatar_url %>">
   <p>
     <a href="/private/users/<%= entries[0].user_id %>/new">Create New Blog Entry</a>
   </p>
@@ -13,8 +14,9 @@
       <div class = "entries">
         <p>
           <a href="/private/entries/<%= entries.id %>">
-            <%= entries.title %><br>
-            <%= entries.date_created %>
+            Title: <%= entries.title %><br>
+            Location: <%= entries.location %><br>
+            Date: <%= entries.date_created %><br>
           </a>
         </p>
       </div>

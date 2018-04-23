@@ -62,14 +62,14 @@ module.exports = {
   },
 
     // Find All Blog Entries From One User
-  findUserEntries (user) {
+  findUserEntries (entry) {
     return db.many(`
-      SELECT *
-      FROM users
-      JOIN blog_entries
-        ON users.id = blog_entries.user_id
-      WHERE users.id = $1
-    `, user)
+      SELECT *, blog_entries.id as entry_id
+        FROM users
+   LEFT JOIN blog_entries
+          ON users.id = blog_entries.user_id
+       WHERE users.id = $1
+    `, entry)
   },
 
     // Find All Blog Entries

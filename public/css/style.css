@@ -67,6 +67,8 @@ h1 {
   text-align: center;
 }
 p {
+  text-align: left;
+  max-width: 500px;
   padding: 3%;
 }
 /*.blue-bar {
@@ -94,4 +96,8 @@ p {
 .users {
   display: inline-block;
 
+}
+.entry {
+
+  background-color: rgba(30,30,30,.4)
 }
