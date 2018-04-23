@@ -12,6 +12,7 @@ module.exports = {
   showUserProfile(req, res) {
     let user = res.locals.user
     console.log('From views controller, public', user)
+    // res.json(user);
     res.render('public/user-public-profile', {user: user})
   },
 

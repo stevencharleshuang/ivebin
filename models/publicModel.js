@@ -7,18 +7,18 @@ module.exports = {
     return db.one(`
       SELECT  *, blog_entries.id as entry_id
       FROM users
-      JOIN blog_entries
+      LEFT JOIN blog_entries
           ON users.id = blog_entries.user_id
        WHERE blog_entries.id = $1
     `, id);
   },
 
-  // Find One User By ID
+  // Find Many Blog Entries From One User By ID
   findByUserId(id) {
     return db.many(`
       SELECT *, blog_entries.id as entry_id
         FROM users
-        JOIN blog_entries
+   LEFT JOIN blog_entries
           ON users.id = blog_entries.user_id
        WHERE users.id = $1
     `, id);

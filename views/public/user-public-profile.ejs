@@ -8,17 +8,11 @@
           <%= user[0].email %><br>
           <img src="<%= user[0].avatar_url %>" /><br>
         </p>
-          <% user.forEach(user => { %>
-      <div class="entries">
-        <p>
-          <a href="/public/users/<%= user.user_id %>/entries/<%= user.id %>">
-            Title: <%= user.title %><br>
-            Location: <%= user.location %><br>
-            Date: <%= user.date_created %>
-          </a>
-        </p>
-      </div>
-    <% }) %>
+          <% if (user[0].content) { %>
+            <% include ../../partials/entries-loop.ejs %>
+          <% } else { %>
+            <p> no blog posts </p>
+          <% } %>
     </div>
 
     <p>

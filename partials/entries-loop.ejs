@@ -1,0 +1,11 @@
+<% user.forEach(entry => { %>
+      <div class="entries">
+        <p>
+          <a href="/public/users/<%= entry.user_id %>/entries/<%= entry.id %>">
+            Title: <%= entry.title %><br>
+            Location: <%= entry.location %><br>
+            Date: <%= entry.date_created %>
+          </a>
+        </p>
+      </div>
+    <% }) %>
