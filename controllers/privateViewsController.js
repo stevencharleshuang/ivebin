@@ -25,7 +25,7 @@ module.exports = {
   showPrivateUserProfile (req, res) {
     let entries = res.locals.entries
     let user = res.locals.user
-    console.log('Private: Showing One User Profile', res.locals.entries)
+    // console.log('Private: Showing One User Profile', res.locals.entries)
     res.render('private/user-private-profile', {entries: entries, user: user})
   },
 
