@@ -19,10 +19,12 @@ const publicController = {
 
   // Get One User Profile - Public
   getOneUser(req, res, next) {
+    console.log('Reached the controller: getOneUser()')
     publicDB.findByUserId(req.params.id)
+    // publicDB.
     .then((user) => {
       res.locals.user = user;
-      console.log('Public Controller, get one user profile', user)
+      // console.log('Public Controller, get one user profile', user)
       // res.send(user);
       next();
     })

@@ -9,7 +9,7 @@ module.exports = {
       INSERT INTO users
                   (name, username, email, password, avatar_url)
            VALUES ($/name/, $/username/, $/email/, $/password/, $/avatar_url/)
-        RETURNING *
+        RETURNING *;
     `, user);
   },
 
@@ -20,7 +20,7 @@ module.exports = {
             SET name = $/name/, username = $/username/, email = $/email/,
                 password = $/password/, avatar_url = $/avatar_url/
           WHERE id = $/id/
-      RETURNING *
+      RETURNING *;
     `, user);
     console.log('reached models')
   },
@@ -28,7 +28,7 @@ module.exports = {
   deleteUser(user) {
     return db.none(`
       DELETE FROM users
-            WHERE id = $1
+            WHERE id = $1;
     `, user)
   },
 
@@ -37,13 +37,20 @@ module.exports = {
     return db.one(`
       SELECT *
         FROM users
-       WHERE username = $1
+       WHERE username = $1;
     `, username)
   },
 
+  findUserDetails(user) {
+    return db.one(`
+      SELECT *
+        FROM users
+       WHERE id = $1;
+    `, user)
+  },
   // Blog Entries Models
     // Create New Entry
-  createNewEntry(entry, res) {
+  createNewEntry(entry) {
     return db.one(`
       INSERT INTO blog_entries
                   (date_created, location, title, content, image_url, user_id)

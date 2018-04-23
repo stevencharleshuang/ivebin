@@ -5,12 +5,14 @@
 <div class="home-wrapper">
   <div class="home-main">
   <div class="blue-bar"><h1>This is a private user profile view</h1></div>
-  <img src="<%= entries[0].avatar_url %>">
+  <h3>Username: <%= user.username %></h3>
+  <h4>Name: <%= user.name %></h4>
+  <img src="<%= user.avatar_url %>">
   <p>
-    <a href="/private/users/<%= entries[0].user_id %>/new">Create New Blog Entry</a>
+    <a href="/private/users/<%= user.id %>/new">Create New Blog Entry</a>
   </p>
   <% console.log('User entries:', entries) %>
-  <% if (entries[0].content) { entries.forEach(entries => { %>
+  <% if (entries[0].content !== null) { entries.forEach(entries => { %>
       <div class = "entries">
         <p>
           <a href="/private/entries/<%= entries.id %>">
@@ -23,10 +25,10 @@
     <% })} else { %>
             <p> no blog posts </p>
           <% } %>
-    <a href="/private/users/<%= entries[0].user_id %>/edit">
+    <a href="/private/users/<%= user.id %>/edit">
       <input type="button" value="Edit User">
     </a>
-    <form method='POST' action="/private/users/<%= entries[0].user_id %>?_method=DELETE">
+    <form method='POST' action="/private/users/<%= user.id %>?_method=DELETE">
       <input type="Submit" value="Delete Account">
     </form>
   </div>

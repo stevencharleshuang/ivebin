@@ -8,7 +8,7 @@
           <%= user[0].email %><br>
           <img src="<%= user[0].avatar_url %>" /><br>
         </p>
-          <% if (user[0].content) { %>
+          <% if (user[0].content !== null) { %>
 
             <% include ../../partials/entries-loop.ejs %>
 

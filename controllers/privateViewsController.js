@@ -10,8 +10,9 @@ module.exports = {
   // Render Make New Blog Entry - Private View
   showPrivateNewEntry (req, res) {
     let entries = res.locals.entries
+    let user = res.locals.user
     // console.log('Private: Showing Make New Entry', res.locals.entries)
-    res.render('private/user-private-create-entry', {entries: entries})
+    res.render('private/user-private-create-entry', {entries: entries, user: user})
   },
 
   // Render One Blog Entry - Private View
@@ -24,8 +25,9 @@ module.exports = {
   // Render One User Profile - Private View
   showPrivateUserProfile (req, res) {
     let user = res.locals.user
-    // console.log('Private: Showing One User Profile', res.locals.entries)
-    res.render('private/user-private-profile', {user: user})
+    let entries = res.locals.entries
+    console.log('Private: Showing One User Profile', user)
+    res.render('private/user-private-profile', {user: user, entries: entries})
   },
 
   // Views Show Edit Form

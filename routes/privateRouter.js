@@ -13,7 +13,7 @@ privateRouter.route('/users/:id/edit')
   .get(publicController.getOneUser, privateViewsController.showEditUserForm)
 
 privateRouter.route('/users/:id')
-  .get(privateController.getUserEntries, publicController.getDirectory, privateViewsController.showPrivateUserProfile)
+  .get(privateController.getUserDetails, privateController.getUserEntries, privateViewsController.showPrivateUserProfile)
   .put(privateController.editUserInfo)
   .post(privateController.postNewEntry)
   .delete(privateController.removeUser)
@@ -24,7 +24,7 @@ privateRouter.route('/entries/:id/edit')
   .get(privateController.getEntry, privateViewsController.showPrivateEditEntry)
 
 privateRouter.route('/users/:id/new')
-  .get(privateController.getUserEntries, privateViewsController.showPrivateNewEntry)
+  .get(privateController.getUserEntries, privateController.getUserDetails, privateViewsController.showPrivateNewEntry)
 
 privateRouter.route('/entries/:id')
   .get(privateController.getEntry, privateViewsController.showPrivateOneEntry)

@@ -11,16 +11,15 @@ module.exports = {
   // Views Show One User Profile
   showUserProfile(req, res) {
     let user = res.locals.user
-    console.log('From views controller, public', user)
+    console.log('From Public Views Controller, user:', user)
     // res.json(user);
     res.render('public/user-public-profile', {user: user})
   },
 
   // Views Show Homepage
   showHomepage(req, res) {
-    let newUserId = req.body.length
-    console.log(req.body.id)
-    res.render('home/index', {newUserId: newUserId});
+    console.log('From Public Views Controller, rendered showHomepage()')
+    res.render('home/index');
   },
 
   // showUserProfile(req, res) {
