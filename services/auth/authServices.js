@@ -1,22 +1,22 @@
 // Ron Addy's Sample Express App Auth
 // https://github.com/RonAddy/Sample_Express_App_Auth
-const bcrypt = require('bcrypt');
+const bcrypt    = require('bcrypt');
 const privateDB = require('../../models/privateModel')
-const publicDB = require('../../models/publicModel')
+const publicDB  = require('../../models/publicModel')
 
 module.exports = {
 
   login(req, res, next) {
     let user;
     const loginAttempt = {
-      uname: req.body.uname,
+      username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
     }
-    publicDB.findUser(loginAttempt.uname)
+    privateDB.findByUsername(loginAttempt.username)
       .then(userInfo => {
         user = userInfo
-        return bcrypt.compareSync(loginAttempt.password, userInfo.password_digest)
+        return bcrypt.compareSync(loginAttempt.password, userInfo.password)
       })
       .then(isValidPass => {
         if (!isValidPass) {
@@ -41,12 +41,14 @@ module.exports = {
     const salt = parseInt(process.env.SALT)
     const hash = bcrypt.hashSync(req.body.password, salt)
     const user = {
-      uname: req.body.uname,
+      name: req.body.name,
+      username: req.body.username,
       email: req.body.email,
-      password_digest: hash
+      password: hash,
+      avatar_url: req.body.avatar_url,
     }
 
-    privateDB.createUser(user)
+    privateDB.createNewUser(user)
       .then(user => {
         if (!user) {
           throw {
@@ -64,5 +66,5 @@ module.exports = {
   loginRequire: [
     (req, res, next) => next(!req.session.user || null),
     (err, req, res, next) => res.sendStatus(401),
-  ]
+  ],
 };

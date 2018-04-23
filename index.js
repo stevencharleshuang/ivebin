@@ -7,7 +7,7 @@ const logger         = require('morgan');
 const bodyParser     = require('body-parser');
 const path           = require('path');
 const methodOverride = require('method-override');
-const sesion = require('express-session')
+const session = require('express-session')
 
 const publicRouter   = require('./routes/publicRouter');
 const privateRouter  = require('./routes/privateRouter');
@@ -27,7 +27,7 @@ app.set('server_secret', process.env.SERVER_SECRET);
 app.use(session({
   secret: app.get('server_secret'),
   resave: false,
-  saveUninitialized: false.
+  saveUninitialized: false,
 }));
 
 app.use(logger('dev'));

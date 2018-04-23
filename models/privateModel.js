@@ -1,7 +1,18 @@
+const bcrypt = require('bcrypt');
 const db = require('../config/connection');
 
 module.exports = {
   // Users Models
+  // Create One User
+  createNewUser(user) {
+    return db.one(`
+      INSERT INTO users
+                  (name, username, email, password, avatar_url)
+           VALUES ($/name/, $/username/, $/email/, $/password/, $/avatar_url/)
+        RETURNING *
+    `, user);
+  },
+
     // Update One User
   updateUser(user) {
     return db.one(`
@@ -19,6 +30,15 @@ module.exports = {
       DELETE FROM users
             WHERE id = $1
     `, user)
+  },
+
+   // Find One User By Username
+  findByUsername(username) {
+    return db.one(`
+      SELECT *
+        FROM users
+       WHERE username = $1
+    `, username)
   },
 
   // Blog Entries Models
@@ -45,8 +65,10 @@ module.exports = {
   findUserEntries (user) {
     return db.many(`
       SELECT *
-      FROM blog_entries
-      WHERE user_id = $1
+      FROM users
+      JOIN blog_entries
+        ON users.id = blog_entries.user_id
+      WHERE users.id = $1
     `, user)
   },
 

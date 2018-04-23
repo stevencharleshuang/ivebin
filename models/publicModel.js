@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const db = require('../config/connection');
 
 module.exports = {
@@ -9,6 +10,15 @@ module.exports = {
         FROM users
        WHERE id = $1
     `, id);
+  },
+
+  // Find One User By Username
+  findByUsername(username) {
+    return db.one(`
+      SELECT *
+        FROM users
+       WHERE username = $1
+    `, username)
   },
 
   // Find All Users

@@ -46,7 +46,6 @@ const publicController = {
     publicDB.createNewUser(req.body)
       .then(user => {
         // res.json(user)
-        res.redirect(`/public/users/`)
         next();
       })
       .catch((err) => {

@@ -8,7 +8,8 @@
   <p>
     <a href="/private/users/<%= entries[0].user_id %>/new">Create New Blog Entry</a>
   </p>
-  <% entries.forEach(entries => { %>
+  <% console.log('User entries:', entries) %>
+  <% if (entries.length > 0) { entries.forEach(entries => { %>
       <div class = "entries">
         <p>
           <a href="/private/entries/<%= entries.id %>">
@@ -17,7 +18,7 @@
           </a>
         </p>
       </div>
-    <% }) %>
+    <% })} %>
     <a href="/private/users/<%= entries[0].user_id %>/edit">
       <input type="button" value="Edit User">
     </a>

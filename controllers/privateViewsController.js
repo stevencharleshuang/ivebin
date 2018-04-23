@@ -35,4 +35,13 @@ module.exports = {
     res.render('private/edit-user', {user: user})
   },
 
+  handleLogin(req, res) {
+    let user = req.session.user
+    console.log('from views controller', user.id)
+    res.redirect(`/private/users/${user.id}`)
+  },
+
+  handleRegisterNewUser(req, res) {
+    res.redirect(`/public/users`)
+  },
 };
