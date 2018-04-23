@@ -51,21 +51,21 @@ app.get('/', (req, res) => {
 // Ron Addy's Sample Express App Auth
 // https://github.com/RonAddy/Sample_Express_App_Auth
 // Allows app to send a json obj for unrecognized routes
-app.use('*', (err, req, res, next) => {
-  res.status(400).json({
-    error: err,
-    message: err.message
-  })
-})
-
-// json object for server errors
-// app.use((err, req, res, next) => {
-//   console.log(err)
-//   res.status(500).json({
+// app.use('*', (err, req, res, next) => {
+//   res.status(400).json({
 //     error: err,
 //     message: err.message
 //   })
 // })
+
+// json object for server errors
+app.use((err, req, res, next) => {
+  console.log(err)
+  res.status(500).json({
+    error: err,
+    message: err.message
+  })
+})
 
 app.listen(PORT, () => {
   console.log(`Server up and running! Port: ${PORT} Env: ${app.get('env')}`);

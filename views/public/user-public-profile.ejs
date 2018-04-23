@@ -9,7 +9,9 @@
           <img src="<%= user[0].avatar_url %>" /><br>
         </p>
           <% if (user[0].content) { %>
+
             <% include ../../partials/entries-loop.ejs %>
+
           <% } else { %>
             <p> no blog posts </p>
           <% } %>
