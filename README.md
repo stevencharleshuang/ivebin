@@ -101,23 +101,34 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 |   --- |   :---:   |   :---:   |   :---:   |   :---:   |
 |   Database Creation   |   H   |   1   |   1   |   0.2 |
 |   Create User Table   |   H   |   0.5 |   0.5 |   0.5 |
-|   Create Blog Table   |   H   |   0.5 |       |       |
+|   Create Blog Table   |   H   |   0.5 |   0.5 |   0.3 |
 |   Create New User - Register New User |   H   |   2   |   1   |   3   |
 |   Read Users - Users Directory    |   H   |   1   |   1   |   1   |
 |   Read User Info - Profile Page   |   H   |   1.5 |   1   |   1   |
 |   Update User Info    |   M   |   2   |   2   |   3   |
 |   Delete User - Account Deletion  |   M   |   0.5 |   0.5 |   0.5 |
-|   Create New Blog Entry   |   H   |   2   |       |       |
-|   Read Blog - Show All Blog Entries From One User |   H   |   2   |       |       |
-|   Read Blog - Show One Blog Entry From One User   |   H   |   1   |       |       |
-|   Update One Blog Entry From One User |   M   |   2   |       |       |
-|   Delete One Blog Entry From One User |   M   |   0.5 |       |       |
-|   Authentication - Login - Research   |   M   |   2   |       |       |
-|   Authentication - Login - Planning   |   M   |   0.5 |       |       |
-|   Authentication - Login - Implementation |   M   |   2   |       |       |
-|   Authorization - Public - Private Page Access - Research |   M   |   1   |       |       |
-|   Authorization - Public - Private Page Access - Planning |   M   |   0.5 |       |       |
-|   Authorization - Public - Private Page Access - Implementation   |   M   |   1.5 |       |       |
+|   Create New Blog Entry   |   H   |   2   |   2   |   3   |
+|   Read Blog - Show All Blog Entries From One User |   H   |   2   |   2   |   0.8 |
+|   Read Blog - Show One Blog Entry From One User   |   H   |   1   |   1   |   1   |
+|   Update One Blog Entry From One User |   M   |   2   |   2   |   3   |
+|   Delete One Blog Entry From One User |   M   |   0.5 |   0.5 |   0.5 |
+|   Authentication - Login - Research   |   M   |   2   |   2   |   1.5 |
+|   Authentication - Login - Planning   |   M   |   0.5 |   0.5 |   0.5 |
+|   Authentication - Login - Implementation |   M   |   2   |   2   |   2   |
+|   Authorization - Public - Private Page Access - Research |   M   |   1   |   1   |   1   |
+|   Authorization - Public - Private Page Access - Planning |   M   |   0.5 |   0.5 |   0.7 |
+|   Authorization - Public - Private Page Access - Implementation   |   M   |   1.5 |   1   |   2   |
+|   Flex Box    |   L   |   0.5 |   0.5 |   1   |
+|   Video Presentation  |   L   |   1   |   1   |   2   |
+|   Post MVP: API Integration - Research    |   M   |   1   |   1   |   1   |
+|   Post MVP: API Integration - Planning    |   M   |   0.5 |   0   |   0   |
+|   Post MVP: API Integration - Development |   M   |   1.5 |   0   |   0   |
+|   Post MVP: Design    |   H   |   1.5 |   1.5 |   2   |
+|   Post MVP: Comments Section  |   L   |   1.5 |   0   |   0   |
+|   Post MVP: Selective Blog accessibility - Planning   |   L   |   1   |   0   |   0   |
+|   Post MVP: Selective Blog accessibility - Development    |   L   |   1   |   0   |   0   |
+|       |       |       |       |       |
+|   Sum Hours   |       |   33.5    |   26  |   31.5    |       |
 |   Flex Box    |   L   |   0.5 |       |       |
 |   Video Presentation  |   L   |   1   |       |       |
 |   Post MVP: API Integration - Research    |   M   |   1   |       |       |
