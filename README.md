@@ -86,6 +86,7 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 
 ### POST MVP
 *   API integration for displaying visited locations information
+*   WYSIWYG Editor for blog entry content
 *   Design enhancements
 *   Blog commenting functionality
 *   Travel costs or money spent integration
