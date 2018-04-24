@@ -4,10 +4,10 @@
   <form action="/private/entries/<%= entry.id %>?_method=PUT" method="POST">
   <% console.log('From Blog EDIT Form:', entry.id) %>
     <input type="hidden" name="date_created" placeholder="<%= entry.date_created %>" /><br>
-    <input type="text" name="location" placeholder="<%= entry.location %>" /><br>
-    <input type="text" name="title" placeholder="<%= entry.title %>" /><br>
-    <input type="text" name="content" placeholder="<%= entry.content %>" /><br>
-    <input type="text" name="image_url" placeholder="<%= entry.image_url %>" /><br><br>
+    Location:&nbsp;<input type="text" name="location" placeholder="<%= entry.location %>" /><br>
+    Title:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="title" placeholder="<%= entry.title %>" /><br>
+    Content: &nbsp;<input type="text" name="content" placeholder="<%= entry.content %>" /><br>
+    Image:   &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="image_url" placeholder="<%= entry.image_url %>" /><br><br>
     <input type="hidden" name="user_id" placeholder="<%= entry.user_id %>" />
     <input type="submit" value="Edit Blog Entry" />
   </form>
