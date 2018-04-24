@@ -271,20 +271,20 @@ Because the password was hashed upon creation, it's near impossible to update a 
 Sometimes the links would produce unexpected results, most likely due to syntax errors in setting route targets.
 
 ## Sources
-* Originally Intended for broken image replacement
+* Originally Intended for broken image replacement: 
 [Question Mark API for broken image replacement](http://pngimg.com/uploads/question_mark/question_mark_PNG129.png)
 
-* Used for Authentication-Authorization research and sample
+* Used for Authentication-Authorization research and sample: 
 [Sessions-Authentication Tutorial](https://github.com/RonAddy/Sample_Express_App_Auth)
 
-* Used for Authentication-Authorization research and sample
+* Used for Authentication-Authorization research and sample: 
 [Jason Seminara's lesson on sessions](https://git.generalassemb.ly/wdi-nyc-rover/js-node-sessions-lesson)
 
-* Used for creating database dummy data
+* Used for creating database dummy data: 
 [Convert CSV](http://www.convertcsv.com/)
 
-* Used for image sample in user creation
+* Used for image sample in user creation: 
 [NYC Image](https://1dib1q3k1s3e11a5av3bhlnb-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/NYC-aerial-view.jpg)
 
-* Used for background audio in presentation
+* Used for background audio in presentation: 
 [Background Music during presentation](https://soundcloud.com/steve-moneymoney)
