@@ -15,6 +15,9 @@
 ## Project Description
 IveBin is a travel blogging app that allows users to share their stories along with pictures of their travels. Post MVP, users are able to reference locations they have visited using Google's Places API and include information such as address, hours, price level, ratings and reviews.
 
+• [Youtube](https://youtu.be/F6xA0ToL07M)
+• [Heroku](https://ivebin.herokuapp.com)
+
 ## Wireframes
 * [Wireframe Image 01 - Whiteboard - General Overview](http://res.cloudinary.com/dk1cgfxkn/image/upload/v1524070206/Wire_Frame_001.jpg)
 
@@ -131,7 +134,7 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 
 | Function | Description | 
 | --- | :---: |  
-|  |  |
+| Login  | This is the login function that was resppropriated from Ron and Jason's example. It will be helpful in future apps requiring authentication.  |
 
 ## Additional Libraries
 
@@ -147,21 +150,141 @@ As a user, when I choose to create a new blog post, I want to be able to title m
  
 ## Code Snippet
 
+// One User Private Profile
+privateRouter.route('/users/:id')
+  .get(AuthService.loginRequired, privateController.getUserEntries,
+    publicController.getDirectory, privateViewsController.showPrivateUserProfile)
+  .put(AuthService.loginRequired, privateController.editUserInfo)
+  .post(AuthService.loginRequired, privateController.postNewEntry)
+  .delete(AuthService.loginRequired, privateController.removeUser)
+
+  I'm most proud of my routes setup as this was something I struggled with this unit.
+I'm happy with how clean my code came out syntactically speaking.
+
 ## Installation Instructions
+
+After forking and cloning down the repo, run npm i to install the dependencies. 
+It is likely that you will have to create a .env file with the following code within: 
+SERVER_SECRET=secret
+DB_NAME=travel-blog
+Once that is done, Installation should be complete and you should be able to run the server using 'npm run dev'
 
 ## Change Log
 
+I was unable to integrate an external API and a wysiwyg editor for blog content due to time constraints. Other than that, I stayed on course for this project.
 
 ## Issues and Resolutions
 
-**ERROR**:                          
+**ERROR**:       
+Cannot GET … when trying to PUT
+
 **RESOLUTION**: 
+Was not implementing method-override correctly
+
+**ERROR**:       
+Cannot PUT public/users/10/public/users/10 …
+
+**RESOLUTION**: 
+Problem with action="" missing / at beginning
+
+**ERROR**:       
+Refused to apply style from 'http://localhost:3000/public/css/style.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.                   
+**RESOLUTION**: 
+Set Absolute path to css i.e. /../css/style.css instead of ../css/style.css
+
+**ERROR**:       
+SyntaxError: Unexpected token {
+
+**RESOLUTION**: 
+extra } after object function
+
+**ERROR**:       
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+
+**RESOLUTION**: 
+Multiple responses
+
+**ERROR**:
+error: invalid input syntax for integer: "Do ic zetawde ba eboztog        
+                   
+**RESOLUTION**: 
+Trying to return data in improper format
+
+**ERROR**:       
+Route.get() requires a callback function but got a [object Undefined]
+
+**RESOLUTION**: 
+Incorrect call in route to nonexistent function
+
+**ERROR**:       
+error: syntax error at or near "$"
+
+**RESOLUTION**: 
+mistake in createNewEntry params, fixed to req, res, next
+
+**ERROR**:       
+Error: Property 'date_created' doesn't exist.
+
+**RESOLUTION**: 
+mistake in createNewEntry params, fixed to req.body
+
+**ERROR**:       
+I am error:  { error: date/time field value out of range: "123123123", I am error:  { error: invalid input syntax for type date: "reeqwr"
+
+**RESOLUTION**: 
+Needed to specify a real date
+
+**ERROR**:       
+I am error:  Error: Property 'user_id' doesn't exist.
+                   
+**RESOLUTION**: 
+Needed to specify user_id
+
+**ERROR**:       
+error: time zone "gmt-0400" not recognized
+
+**RESOLUTION**: 
+Table Schema Issue, removing Date spec
+
+**ERROR**:    
+"  showHomepage(req, res) {
+  ^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier"   
+                   
+**RESOLUTION**: 
+module.exports object missing , after }
+
+**ERROR**:   
+"""error"": {},
+""message"": ""publicDb is not defined"""    
+                   
+**RESOLUTION**: 
+Syntax Error, "publicDB"
 
 ## Unsolved Problems
 
-**Unsolved Bug**
+**Updating User Details due to Hashing**
+Because the password was hashed upon creation, it's near impossible to update a hashed password.
 
+**Linking Hijinx**
+Sometimes the links would produce unexpected results, most likely due to syntax errors in setting route targets.
 
 ## Sources
+* Originally Intended for broken image replacement
+[Question Mark API for broken image replacement](http://pngimg.com/uploads/question_mark/question_mark_PNG129.png)
 
+* Used for Authentication-Authorization research and sample
+[Sessions-Authentication Tutorial](https://github.com/RonAddy/Sample_Express_App_Auth)
 
+* Used for Authentication-Authorization research and sample
+[Jason Seminara's lesson on sessions](https://git.generalassemb.ly/wdi-nyc-rover/js-node-sessions-lesson)
+
+* Used for creating database dummy data
+[Convert CSV](http://www.convertcsv.com/)
+
+* Used for image sample in user creation
+[NYC Image](https://1dib1q3k1s3e11a5av3bhlnb-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/NYC-aerial-view.jpg)
+
+* Used for background audio in presentation
+[Background Music during presentation](https://soundcloud.com/steve-moneymoney)
