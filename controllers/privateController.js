@@ -45,6 +45,19 @@ getUserEntries(req, res, next) {
     });
   },
 
+getUserDetails(req, res, next) {
+  privateDB.findUserDetails(req.params.id)
+    .then((user) => {
+      console.log('Private: Reached the controller');
+      res.locals.user = user;
+      // res.json(entries);
+      next();
+    })
+    .catch((err) => {
+      console.log('I am error: ', err);
+      next(err);
+    });
+  },
 
 // Get One Entry From One User
 getEntry(req, res, next) {

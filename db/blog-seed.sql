@@ -1,4 +1,4 @@
-/c travel-blog
+
 
 DROP TABLE IF EXISTS blog_entries CASCADE;
 CREATE TABLE blog_entries(

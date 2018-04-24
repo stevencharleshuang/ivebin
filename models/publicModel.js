@@ -1,11 +1,11 @@
 const bcrypt = require('bcrypt');
-const db = require('../config/connection');
+const db     = require('../config/connection');
 
 module.exports = {
   // Find One Blog By User ID
   findEntryByUserId(id) {
     return db.one(`
-      SELECT  *, blog_entries.id as entry_id
+      SELECT  blog_entries.*, blog_entries.id as entry_id
       FROM users
       LEFT JOIN blog_entries
           ON users.id = blog_entries.user_id

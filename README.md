@@ -25,6 +25,9 @@ IveBin is a travel blogging app that allows users to share their stories along w
 ## ERD
 * [ERD](http://res.cloudinary.com/dk1cgfxkn/image/upload/v1524153750/Project_2_ERD_1.jpg)
 
+## Artifacts
+* [Day 6 Standups](http://res.cloudinary.com/dk1cgfxkn/image/upload/v1524501945/20180423_Standups_Artifact.jpg)
+
 ## Blog Components
 
 ### User Stories

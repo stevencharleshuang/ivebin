@@ -1,4 +1,3 @@
-/c travel-blog
 
 DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users(
