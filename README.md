@@ -173,6 +173,8 @@ Once that is done, Installation should be complete and you should be able to run
 
 I was unable to integrate an external API and a wysiwyg editor for blog content due to time constraints. I would like to have fully implemented authorization as once logged in, users can access other users' private profile views. I would have also liked to have spent a bit more time working on design. Other than that, I stayed on course for this project and focused on making MVP.
 
+I should note as well that Jason had strongly recommended Monday afternoon that I refactor my models and controllers, separating user queries and blog entry queries to separate files to minimize confusion in the backend. I made the decision to table this in lieu of deploying on Heroku, styling with CSS using Flex Box, debugging and finally working on the video presentation. I agree that my queries should have been separated for clarity but I was running out of time and it would not have blocked me from reaching MVP. In retrospect, debugging may have been easier if I had invested an hour or two to clear up that code clutter. This is someting that I would fix coming back to my code.
+
 ## Issues and Resolutions
 
 **ERROR**:       
