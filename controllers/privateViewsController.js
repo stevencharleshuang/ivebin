@@ -33,7 +33,7 @@ module.exports = {
 
   // Views Show Edit Form
   showEditUserForm(req, res) {
-    let user = res.locals.user;
+    let user = req.session.user;
     console.log(user)
     res.render('private/edit-user', {user: user})
   },
