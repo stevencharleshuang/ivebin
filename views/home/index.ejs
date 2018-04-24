@@ -1,23 +1,23 @@
 <% include ../../partials/boilerplate %>
 
-<div class="home-wrapper">
   <div class="home-main">
-    <div class="blue-bar"><h1>This is a header</h1></div>
-    <p>
-      Body Text Sample: Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit. Voluptas recusandae sed odio impedit dolores odit laborum dolorum
-      sequi officia provident exercitationem corporis, iste culpa illo animi
-      maxime sapiente deleniti quia?
-    </p>
-    <p>
-      <a href="/public/users">Directory of Users</a>
-    </p>
-    <div class = "login-form">
-      <% include ../../partials/forms/show-log-in-form %><br />
-    </div>
-    <div class ="register-form"
-      <% include ../../partials/forms/show-new-user-form %>
+    <h1>View the world through other people's words</h1>
+    <div class="main">
+      <div class="blurb item">
+        Welcome to IveBin, a place to reflect and share memoirs driven from wanderlust.<br>
+        Where've you bin?
+        <br><br>
+        <a href="/public/users">User Directory</a>
+      </div>
+      <div class="user-forms item">
+        <div class="login-form">
+          <% include ../../partials/forms/show-log-in-form %><br />
+        </div>
+        <div class="register-form">
+          <% include ../../partials/forms/show-new-user-form %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
 <% include ../../partials/end %>

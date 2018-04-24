@@ -1,21 +1,28 @@
 <% include ../../partials/boilerplate %>
 
-<h1>This Is A Public User Profile</h1>
-    <div class = "user">
+<h1><%= user[0].username %>'s Profile</h1>
+<div class="main">
+    <div class="user-profile">
     <% console.log(user) %>
-        <p>
-          <h2><%= user[0].username %></h2><br>
+        <div class="user-details">
+          <img src="<%= user[0].avatar_url %>" class="avatar"/><br>
           <%= user[0].email %><br>
-          <img src="<%= user[0].avatar_url %>" /><br>
-        </p>
-          <% if (user[0].content) { %>
-            <% include ../../partials/entries-loop.ejs %>
-          <% } else { %>
-            <p> no blog posts </p>
-          <% } %>
+        </div>
+          <div class="blog-list">
+            <h2>Travel Bin:</h2>
+
+            <% if (user[0].content) { %>
+              <% include ../../partials/entries-loop.ejs %>
+            <% } else { %>
+              <p> no blog posts </p>
+            <% } %>
+
+          </div>
     </div>
 
     <p>
       <a href="/public/users">Back to User Directory</a>
     </p>
+</div>
+
 <% include ../../partials/end %>

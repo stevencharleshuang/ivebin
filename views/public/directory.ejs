@@ -1,14 +1,17 @@
 <% include ../../partials/boilerplate %>
 
-<h1>This is the Users Directory</h1>
+<h1>TheyveBin</h1>
+<div class="main">
   <div class = "users-gallery">
     <% users.forEach(users => { %>
         <div class = "users">
           <a href="/public/users/<%= users.id %>">
             <p>"<%= users.username %>"</p>
-            <img src="<%= users.avatar_url %>">
+            <img src="<%= users.avatar_url %>" class="avatar">
           </a>
         </div>
     <% }) %>
   </div>
+</div>
+
 <% include ../../partials/end %>
