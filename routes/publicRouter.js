@@ -16,9 +16,11 @@ publicRouter.route('/users/:id/entries/:id')
 // publicRouter.route('/users/:id/entries')
   // .get(publicController.getManyPublicEntries, publicViewsController.showManyPublicEntries)
 
+// Public profile, one user
 publicRouter.route('/users/:id')
   .get(publicController.getOneUser, publicController.getDirectory, publicViewsController.showUserProfile)
 
+// Public directory of users
 publicRouter.route('/users')
   .get(publicController.getDirectory, publicViewsController.showAllUsers)
   .post(publicController.registerNewUser)
