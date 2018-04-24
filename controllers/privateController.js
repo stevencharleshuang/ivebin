@@ -19,7 +19,7 @@ const privateController = {
 
     // Delete User Account - Move to Private
   removeUser(req, res, next) {
-    publicDB.deleteUser(req.params.id)
+    privateDB.deleteUser(req.params.id)
       .then(() => {
         res.redirect('/public/users');
       })
