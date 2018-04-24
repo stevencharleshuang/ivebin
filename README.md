@@ -128,18 +128,7 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 |   Post MVP: Selective Blog accessibility - Planning   |   L   |   1   |   0   |   0   |
 |   Post MVP: Selective Blog accessibility - Development    |   L   |   1   |   0   |   0   |
 |       |       |       |       |       |
-|   Sum Hours   |       |   33.5    |   26  |   31.5    |       |
-|   Flex Box    |   L   |   0.5 |       |       |
-|   Video Presentation  |   L   |   1   |       |       |
-|   Post MVP: API Integration - Research    |   M   |   1   |       |       |
-|   Post MVP: API Integration - Planning    |   M   |   0.5 |       |       |
-|   Post MVP: API Integration - Development |   M   |   1.5 |       |       |
-|   Post MVP: Design    |   H   |   1.5 |       |       |
-|   Post MVP: Comments Section  |   L   |   1.5 |       |       |
-|   Post MVP: Selective Blog accessibility - Planning   |   L   |   1   |       |       |
-|   Post MVP: Selective Blog accessibility - Development    |   L   |   1   |       |       |
-|       |       |       |       |       |
-|   Sum Hours   |       |   33.5    |   7   |   9.2 |
+|   Sum Hours   |       |   33.5    |   26  |   31.5    |
 
 ## Helper Functions
 
