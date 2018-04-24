@@ -2,10 +2,10 @@ module.exports = {
 
   // Views Show One Public Entry From One User
   showOnePublicEntry(req, res) {
-    let user = res.locals.user
+    let entry = res.locals.entry
     // let entry = req.params.id
-    console.log('From views controller, public user one entry: ', user)
-    res.render('public/user-public-entry', {user: user})
+    console.log('From views controller, public user one entry: ', entry)
+    res.render('public/user-public-entry', {entry: entry})
   },
 
   // Views Show One User Profile

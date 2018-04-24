@@ -1,23 +1,35 @@
 <% include ../../partials/boilerplate %>
 <% console.log('View Rendered: User Public Entry') %>
 
-  <h1><%= user.title  %><br></h1>
+  <h1><%= entry.title  %><br></h1>
   <div class="main">
-      <div class="entry">
-        <!-- Testing Only:<br> -->
-        <!-- User Id: <%= user.user_id %><br> -->
-        <!-- Blog Entry Id: <%= user.entry_id %><br> -->
-          <p>
-            Date: <%= user.date_created %><br>
-            Location: <%= user.location %><br>
-            <p><%= user.content %></p>
 
+      <div class="entry">
+     <div class="entry-content">
+        <p>
+
+          Date: <%= entry.date_created %><br>
+          Location: <%= entry.location %><br>
+          <p>
+            <%= entry.content %><br>
           </p>
+        </p>
+        <img src="<%= entry.image_url%>">
+        <div class="user-options">
 
           <%# Back to User Profile %>
           <p>
-          <a href="/public/users/<%= user.user_id %>">Back to User Profile</a>
+            <span>
+              <a href="/public/users/<%= entry.user_id %>">Back to User Profile</a>
+            </span>
           </p>
+        </div>
+      </div>
+        <!-- Testing Only:<br> -->
+        <!-- User Id: <%= entry.user_id %><br> -->
+        <!-- Blog Entry Id: <%= entry.entry_id %><br> -->
+
+
       </div>
 </div>
 

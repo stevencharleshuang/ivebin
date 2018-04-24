@@ -1,35 +1,44 @@
 <% include ../../partials/boilerplate %>
 <% console.log('View Rendered: User Private Profile') %>
 
-<div class="home-wrapper">
-  <div class="home-main">
-    <div class="blue-bar"><h1>This is a private user blog entry view</h1></div>
-      <div class="entry">
-        Testing Only:<br>
-        User Id: <%= entry.user_id %><br>
-        Blog Entry Id: <%= entry.id %><br>
+  <h1><%= entry.title  %></h1>
+  <div class="main">
+    <div class="entry">
+      <% console.log('Single Entry View Log:', entry.id) %>
+<!--         Testing Only:<br>
+      User Id: <%= entry.user_id %><br>
+      Blog Entry Id: <%= entry.id %><br> -->
+      <div class="entry-content">
+
+        <p>
+
+          Date: <%= entry.date_created %><br>
+          Location: <%= entry.location %><br>
           <p>
-
-            <%= entry.title  %><br>
-            <%= entry.date_created %><br>
             <%= entry.content %><br>
-
           </p>
-          <%# Edit Entry %>
-          <a href="/private/entries/<%= entry.id %>/edit">
-            <input type="button" value="Edit Blog">
-          </a><br>
+        </p>
+        <img src="<%= entry.image_url%>">
+      </div>
+      <div class="entry-options">
 
-          <%# Delete Entry %>
-          <form method='POST' action="/private/entries/<%= entry.id %>?_method=DELETE">
-            <input type="Submit" value="Delete Blog Entry">
-          </form><br>
-          <% console.log(entry) %>
+        <%# Edit Entry %>
+        <a href="/private/entries/<%= entry.id %>/edit">
+          <input type="button" value="Edit Blog">
+        </a><br>
+
+        <%# Delete Entry %>
+        <form method='POST' action="/private/entries/<%= entry.id %>?_method=DELETE">
+          <input type="Submit" value="Delete Blog Entry">
+        </form><br>
+        <% console.log(entry) %>
 
           <%# Back to User Profile %>
-          <a href="/private/users/<%= entry.user_id %>">Back to User Profile</a>
+          <span>
+            <a href="/private/users/<%= entry.user_id %>">Back to User Profile</a>
+          </span>
       </div>
+    </div>
   </div>
-</div>
 
 <% include ../../partials/end %>

@@ -2,15 +2,18 @@
 <% console.log('View Rendered: User Private Profile') %>
 <%# console.log(entries) %>
 
-<div class="home-wrapper">
-  <div class="home-main">
-  <div class="blue-bar"><h1>This is a private user profile view</h1></div>
-  <img src="<%= entries[0].avatar_url %>">
-  <p>
-    <a href="/private/users/<%= entries[0].user_id %>/new">Create New Blog Entry</a>
-  </p>
-  <% console.log('User entries:', entries) %>
-  <% if (entries[0].content) { entries.forEach(entries => { %>
+
+<h1><%= entries[0].name %>'s Private Profile</h1>
+<div class="main">
+  <div class="user-profile">
+    Your Username: <%= entries[0].username %>
+    <img src="<%= entries[0].avatar_url %>" class="avatar">
+      <p>
+        <% console.log(user) %>
+        <a href="/private/users/<%= user.id %>/new">Create New Blog Entry</a>
+      </p>
+      <% console.log('User entries:', entries) %>
+      <% if (entries[0].content) { entries.forEach(entries => { %>
       <div class = "entries">
         <p>
           <a href="/private/entries/<%= entries.id %>">
@@ -20,21 +23,22 @@
           </a>
         </p>
       </div>
-    <% })} else { %>
+      <% })} else { %>
             <p> no blog posts </p>
           <% } %>
+
+  </div>
     <div class="User Options">
-      <a href="/private/users/<%= entries[0].user_id %>/edit">
+      <a href="/private/users/<%= user.id %>/edit">
         <input type="button" value="Edit User">
-      </a><br>
+      </a><br><br>
+      <form method='POST' action="/private/users/<%= user.id %>?_method=DELETE">
+        <input type="Submit" value="Delete Account">
+      </form><br><br>
       <a href="/auth/logout">
         <input type="button" value="Log Out">
       </a><br>
-      <form method='POST' action="/private/users/<%= entries[0].user_id %>?_method=DELETE">
-        <input type="Submit" value="Delete Account">
-      </form>
     </div>
-  </div>
 </div>
 
 <% include ../../partials/end %>

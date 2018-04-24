@@ -5,9 +5,9 @@ const publicController = {
   // Get One User's Blog Entry - Public
   getOnePublicEntry(req, res, next) {
     publicDB.findEntryByUserId(req.params.id)
-    .then((user) => {
+    .then((entry) => {
     console.log('Public Controller: Reached Get One Users Blog Entry Func', req.params.id)
-      res.locals.user = user;
+      res.locals.entry = entry;
       // res.send(user);
       next();
     })

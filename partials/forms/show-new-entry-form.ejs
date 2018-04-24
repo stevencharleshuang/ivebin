@@ -1,7 +1,7 @@
 <% console.log('View Rendered: Partial - New Blog Entry Form') %>
 
 <div class="form new-entry">
-  <form action="/private/users/<%= entries[0].user_id %>" method="POST">
+  <form action="/private/users/<%= user.id %>" method="POST">
     <% console.log('From New Entry Form, User Id: ', entries[0].user_id) %>
 
     <input type="text" name="date_created" placeholder="Current Date" /><br>
@@ -10,6 +10,6 @@
     <input type="text" name="content" placeholder="Content" /><br>
     <input type="text" name="image_url" placeholder="image_url" /><br><br>
     <input type="submit" value="Create New Entry" />
-    <input type="hidden" name="user_id" value="<%= entries[0].user_id %>" /><br>
+    <input type="hidden" name="user_id" value="<%= user.id %>" /><br>
   </form>
 </div>

@@ -6,9 +6,11 @@
 <% include ../../partials/forms/show-new-entry-form %>
 
 <br><br>
-<%# console.log('entries log', entries[0].user_id) %>
-<a href="/private/users/<%= entries[0].user_id %>">
-  Back to User Profile
-</a>
+<%# console.log('entries log', user) %>
+<span>
+  <a href="/private/users/<%= user.id %>">
+    Back to User Profile
+  </a>
+</span>
 
 <% include ../../partials/end %>
