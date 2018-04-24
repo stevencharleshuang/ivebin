@@ -124,10 +124,12 @@ editEntry(req, res, next){
 
 // Delete Blog Entry - Private
 removeEntry(req, res, next) {
+  let user = req.session.user
+  console.log('reqparams', user)
   privateDB.deleteEntry(req.params.id)
     .then(() => {
       console.log('Private: Reached the controller');
-      res.redirect('/private/users/1');
+      res.redirect(`/private/users/${user.id}`);
     })
     .catch((err) => {
       console.log('I am error: ', err);
