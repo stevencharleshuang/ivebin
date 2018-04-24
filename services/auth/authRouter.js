@@ -1,7 +1,10 @@
 // Ron Addy's Sample Express App Auth
 // https://github.com/RonAddy/Sample_Express_App_Auth
+// Jason Seminara's 'js-node-sessions-lesson'
+// https://git.generalassemb.ly/wdi-nyc-rover/js-node-sessions-lesson
+
 const authRouter             = require('express').Router();
-const authServices           = require('./authServices');
+const AuthServices           = require('./authServices');
 const publicController       = require('../../controllers/publicController');
 const publicViewsController  = require('../../controllers/publicViewsController');
 const privateController      = require('../../controllers/privateController')
@@ -13,9 +16,12 @@ function sendError(err, req, res, next) {
 };
 
 authRouter.route('/login')
-  .post(authServices.login, privateViewsController.handleLogin)
+  .post(AuthServices.login, privateViewsController.handleLogin)
+
+authRouter.route('/logout')
+  .get(AuthServices.logout, privateViewsController.handleLogout)
 
 authRouter.route('/register')
-  .post(authServices.register, privateViewsController.handleRegisterNewUser)
+  .post(AuthServices.register, privateViewsController.handleRegisterNewUser)
 
 module.exports = authRouter;

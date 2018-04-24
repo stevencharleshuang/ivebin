@@ -23,12 +23,17 @@
     <% })} else { %>
             <p> no blog posts </p>
           <% } %>
-    <a href="/private/users/<%= entries[0].user_id %>/edit">
-      <input type="button" value="Edit User">
-    </a>
-    <form method='POST' action="/private/users/<%= entries[0].user_id %>?_method=DELETE">
-      <input type="Submit" value="Delete Account">
-    </form>
+    <div class="User Options">
+      <a href="/private/users/<%= entries[0].user_id %>/edit">
+        <input type="button" value="Edit User">
+      </a><br>
+      <a href="/auth/logout">
+        <input type="button" value="Log Out">
+      </a><br>
+      <form method='POST' action="/private/users/<%= entries[0].user_id %>?_method=DELETE">
+        <input type="Submit" value="Delete Account">
+      </form>
+    </div>
   </div>
 </div>
 

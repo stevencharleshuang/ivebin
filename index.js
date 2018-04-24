@@ -1,5 +1,7 @@
 // Ron Addy's Sample Express App Auth
 // https://github.com/RonAddy/Sample_Express_App_Auth
+// Jason Seminara's 'js-node-sessions-lesson'
+// https://git.generalassemb.ly/wdi-nyc-rover/js-node-sessions-lesson
 require('dotenv').config()
 
 const express        = require('express');
@@ -11,7 +13,8 @@ const session = require('express-session')
 
 const publicRouter   = require('./routes/publicRouter');
 const privateRouter  = require('./routes/privateRouter');
-const authRouter = require('./services/auth/authRouter');
+const AuthService    = require('./services/auth/authServices')
+const authRouter     = require('./services/auth/authRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,12 +39,12 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
-// Ron Addy's Sample Express App Auth
-// https://github.com/RonAddy/Sample_Express_App_Auth
+// From Ron Addy's Sample Express App Auth
 app.use('/auth', authRouter);
 
 app.use('/public', publicRouter);
-app.use('/private', privateRouter);
+// From Jason's "js-node-sessions-lesson"
+app.use('/private', AuthService.loginRequired, privateRouter);
 app.get('/', (req, res) => {
   console.log('At Homepage');
   // res.json('Welcome to the IveBin root dir');

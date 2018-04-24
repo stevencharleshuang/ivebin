@@ -3,6 +3,7 @@ const privateRouter          = express.Router();
 const privateController      = require('../controllers/privateController');
 const privateViewsController = require('../controllers/privateViewsController')
 const publicController       = require('../controllers/publicController');
+const AuthService            = require('../services/auth/authServices')
 
 function sendError(err, req, res, next) {
   console.log('I am error');
@@ -10,27 +11,33 @@ function sendError(err, req, res, next) {
 };
 
 privateRouter.route('/users/:id/edit')
-  .get(publicController.getOneUser, privateViewsController.showEditUserForm)
+  .get(AuthService.loginRequired, publicController.getOneUser, privateViewsController.showEditUserForm)
 
+// One User Private Profile
 privateRouter.route('/users/:id')
-  .get(privateController.getUserEntries, publicController.getDirectory, privateViewsController.showPrivateUserProfile)
-  .put(privateController.editUserInfo)
-  .post(privateController.postNewEntry)
-  .delete(privateController.removeUser)
+  .get(AuthService.loginRequired, privateController.getUserEntries,
+    publicController.getDirectory, privateViewsController.showPrivateUserProfile)
+  .put(AuthService.loginRequired, privateController.editUserInfo)
+  .post(AuthService.loginRequired, privateController.postNewEntry)
+  .delete(AuthService.loginRequired, privateController.removeUser)
 
   // .get(privateController.getUserProfile)
 
+// Get Edit One Entry View
 privateRouter.route('/entries/:id/edit')
-  .get(privateController.getEntry, privateViewsController.showPrivateEditEntry)
+  .get(AuthService.loginRequired, privateController.getEntry, privateViewsController.showPrivateEditEntry)
 
+// Get Create New Entry View
 privateRouter.route('/users/:id/new')
-  .get(privateController.getUserEntries, privateViewsController.showPrivateNewEntry)
+  .get(AuthService.loginRequired, privateController.getUserEntries, privateViewsController.showPrivateNewEntry)
 
+// Get One Entry, Edit Entry, Delete Entry
 privateRouter.route('/entries/:id')
-  .get(privateController.getEntry, privateViewsController.showPrivateOneEntry)
-  .put(privateController.editEntry)
-  .delete(privateController.removeEntry)
+  .get(AuthService.loginRequired, privateController.getEntry, privateViewsController.showPrivateOneEntry)
+  .put(AuthService.loginRequired, privateController.editEntry)
+  .delete(AuthService.loginRequired, privateController.removeEntry)
 
+// Get Entries (testing)
 privateRouter.route('/entries')
   .get(privateController.getEntries)
 

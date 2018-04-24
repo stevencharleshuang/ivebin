@@ -40,6 +40,10 @@ module.exports = {
     res.redirect(`/private/users/${user.id}`)
   },
 
+  handleLogout(req, res) {
+    res.redirect('/public');
+  },
+
   handleRegisterNewUser(req, res) {
     res.redirect(`/public/users`)
   },
