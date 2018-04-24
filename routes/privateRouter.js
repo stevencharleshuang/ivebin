@@ -18,8 +18,6 @@ privateRouter.route('/users/:id')
   .post(privateController.postNewEntry)
   .delete(privateController.removeUser)
 
-  // .get(privateController.getUserProfile)
-
 privateRouter.route('/entries/:id/edit')
   .get(privateController.getEntry, privateViewsController.showPrivateEditEntry)
 

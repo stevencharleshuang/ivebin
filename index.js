@@ -7,11 +7,11 @@ const logger         = require('morgan');
 const bodyParser     = require('body-parser');
 const path           = require('path');
 const methodOverride = require('method-override');
-const session = require('express-session')
+const session        = require('express-session')
 
 const publicRouter   = require('./routes/publicRouter');
 const privateRouter  = require('./routes/privateRouter');
-const authRouter = require('./services/auth/authRouter');
+const authRouter     = require('./services/auth/authRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
