@@ -145,7 +145,7 @@ As a user, when I choose to create a new blog post, I want to be able to title m
 
 | Function | Description | 
 | --- | :---: |  
-| Login  | This is the login function that was resppropriated from Ron and Jason's example. It will be helpful in future apps requiring authentication.  |
+| Login  | This is the login function that was reappropriated from Ron Addy and Jason's examples. It will be helpful in future apps requiring authentication.  |
 
 ## Additional Libraries
 
@@ -182,7 +182,7 @@ Once that is done, Installation should be complete and you should be able to run
 
 ## Change Log
 
-I was unable to integrate an external API and a wysiwyg editor for blog content due to time constraints. Other than that, I stayed on course for this project.
+I was unable to integrate an external API and a wysiwyg editor for blog content due to time constraints. I would like to have fully implemented authorization as once logged in, users can access other users' private profile views. I would have also liked to have spent a bit more time working on design. Other than that, I stayed on course for this project and focused on making MVP.
 
 ## Issues and Resolutions
 
